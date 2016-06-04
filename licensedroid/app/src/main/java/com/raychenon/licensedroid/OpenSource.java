@@ -11,7 +11,6 @@ public class OpenSource {
 
     private final String license;
 
-
     public OpenSource(String libraryName, String author, String license) {
         this.libraryName = libraryName;
         this.author = author;

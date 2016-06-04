@@ -10,22 +10,22 @@ import java.util.List;
 /**
  * Created by Raymond Chenon
  */
-public class LicenseAdapter extends RecyclerView.Adapter<LicenseViewHolder>{
+public class OpenSourceAdapter extends RecyclerView.Adapter<OpenSourceViewHolder>{
 
     private List<OpenSource> openSources;
 
-    public LicenseAdapter(final List<OpenSource> openSourceList){
+    public OpenSourceAdapter(final List<OpenSource> openSourceList){
         this.openSources = openSourceList;
     }
 
     @Override
-    public LicenseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public OpenSourceViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.license_item,parent,false);
-        return new LicenseViewHolder(v);
+        return new OpenSourceViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(LicenseViewHolder holder, int position) {
+    public void onBindViewHolder(OpenSourceViewHolder holder, int position) {
         OpenSource item = getItem(position);
 
         holder.tvName.setText(String.format("%s %s",item.getName(), item.getAuthor()));
