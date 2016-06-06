@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import com.raychenon.licensedroid.sample.R;
 
 import com.raychenon.licensedroid.OpenSourceAdapter;
-import com.raychenon.licensedroid.R;
 
 /**
  * Created by Raymond Chenon
@@ -28,7 +28,7 @@ public class OpenSourceActivity extends Activity {
     }
 
     private void initRecyclerView(){
-        OpenSourceAdapter adapter = new OpenSourceAdapter(OpenSourceData.getData());
+        OpenSourceAdapter adapter = new OpenSourceAdapter(OpenSourceData.getLicenseData());
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
