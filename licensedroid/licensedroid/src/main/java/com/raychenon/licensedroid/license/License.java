@@ -14,7 +14,7 @@ public enum License {
         this.value = value;
     }
 
-    public OpenSourceLicense getValue() {
+    public OpenSourceLicense get() {
         return value;
     }
 }

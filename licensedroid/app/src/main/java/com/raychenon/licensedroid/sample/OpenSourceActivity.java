@@ -28,7 +28,7 @@ public class OpenSourceActivity extends Activity {
     }
 
     private void initRecyclerView(){
-        OpenSourceAdapter adapter = new OpenSourceAdapter(OpenSourceData.getData());
+        OpenSourceAdapter adapter = new OpenSourceAdapter(OpenSourceData.getLicenseData());
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);

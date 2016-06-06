@@ -13,7 +13,7 @@ public abstract class OpenSourceLicense {
         return null; // longer than notice
     }
 
-    public String getCopyright() {
+    public String getCopyrightFormat() {
         return null; //  Copyright [yyyy] [name of copyright owner]
     }
 

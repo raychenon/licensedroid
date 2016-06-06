@@ -7,7 +7,7 @@ public class MIT extends OpenSourceLicense {
 
     @Override
     public String getName() {
-        return "he MIT License (MIT)";
+        return "The MIT License (MIT)";
     }
 
     @Override
@@ -20,7 +20,7 @@ public class MIT extends OpenSourceLicense {
     }
 
     @Override
-    public String getCopyright() {
+    public String getCopyrightFormat() {
         return "Copyright (c) <year> <copyright holders>";
     }
 

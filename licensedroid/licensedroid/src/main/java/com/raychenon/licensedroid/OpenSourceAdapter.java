@@ -29,7 +29,11 @@ public class OpenSourceAdapter extends RecyclerView.Adapter<OpenSourceViewHolder
         OpenSource item = getItem(position);
 
         holder.tvName.setText(String.format("%s %s",item.getName(), item.getAuthor()));
-        holder.tvLicense.setText(item.getLicense());
+        if (item.isLicenseText){
+            holder.tvLicense.setText(item.getLicenseText());
+        }else{
+            holder.tvLicense.setText(item.getLicense().get().getNotice());
+        }
     }
 
     @Override
