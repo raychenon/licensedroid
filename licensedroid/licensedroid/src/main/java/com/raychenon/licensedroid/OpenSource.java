@@ -14,6 +14,8 @@ public class OpenSource {
     private String licenseText;
     private License license;
 
+    private int year; // TODO use a Builder pattern
+
     public final boolean isLicenseText;
 
     public OpenSource(String libraryName, String author, String license) {
@@ -45,6 +47,17 @@ public class OpenSource {
 
     public License getLicense() {
         return license;
+    }
+
+    public int getYear() {
+        return year;
+    }
+    public void setYear(final int year) {
+        this.year = year;
+    }
+
+    static class Builder{
+        private int year;
     }
 
 }

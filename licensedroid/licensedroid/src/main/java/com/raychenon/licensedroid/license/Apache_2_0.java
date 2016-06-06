@@ -26,6 +26,10 @@ public class Apache_2_0 extends OpenSourceLicense {
                 "limitations under the License.";
     }
 
+    public String getCopyrightFormat() {
+        return String.format("Copyright %s %s", YEAR, COPYRIGHT_HOLDER);
+    }
+
     @Override
     public String getFullText() {
         return "TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n" +

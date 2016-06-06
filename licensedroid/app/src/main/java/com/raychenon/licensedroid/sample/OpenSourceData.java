@@ -28,7 +28,9 @@ public class OpenSourceData {
 
     public static List<OpenSource> getLicenseData(){
         List<OpenSource> list = new LinkedList<>();
-        list.add(new OpenSource("Butterknife", "Jake Wharton", License.APACHE_2));
+        OpenSource butterknife = new OpenSource("Butterknife", "Jake Wharton", License.APACHE_2);
+        butterknife.setYear(2013);
+        list.add(butterknife);
         list.add(new OpenSource("ViewPagerIndicator", "Jake Wharton",  License.MIT));
 
         // add more

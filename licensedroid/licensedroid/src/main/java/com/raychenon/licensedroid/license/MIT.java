@@ -21,7 +21,7 @@ public class MIT extends OpenSourceLicense {
 
     @Override
     public String getCopyrightFormat() {
-        return "Copyright (c) <year> <copyright holders>";
+        return String.format("Copyright (c)  %s  %s",YEAR,COPYRIGHT_HOLDER);
     }
 
 }
