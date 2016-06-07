@@ -10,10 +10,11 @@ public abstract class LicenseInfos {
 
     abstract public String getName(); // include version
 
-    abstract public String getNotice();
 
-    public String getFullText() {
-        return null; // longer than notice
+    abstract public String getShortDescription();
+
+    public String getLongDescription() {
+        return null;
     }
 
     public String getCopyrightFormat() {
@@ -29,6 +30,10 @@ public abstract class LicenseInfos {
                 .replace(YEAR,String.valueOf(year))
                 .replace(COPYRIGHT_HOLDER,holder);
         return getName() + " - " + copyright;
+    }
+
+    public boolean hasShortDescription(){
+        return getShortDescription() != null;
     }
 
 }

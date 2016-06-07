@@ -5,8 +5,8 @@ package com.raychenon.licensedroid.license;
  */
 public enum License {
 
-    APACHE_2(new Apache_2_0()),
-    MIT(new MIT());
+    APACHE_2(new ApacheLicense20()),
+    MIT(new MITLicense());
 
     private LicenseInfos value;
 

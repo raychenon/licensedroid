@@ -4,15 +4,15 @@ package com.raychenon.licensedroid.license;
  * Created by Raymond Chenon
  * https://opensource.org/licenses/Apache-2.0
  */
-public class Apache_2_0 extends LicenseInfos {
+public class ApacheLicense20 extends LicenseInfos {
 
     @Override
     public String getName() {
-        return "Apache License, Version 2.0";
+        return "Apache License, 2.0 (Apache-2.0)";
     }
 
     @Override
-    public String getNotice() {
+    public String getShortDescription() {
         return "Licensed under the Apache License, Version 2.0 (the \"License\");\n" +
                 "you may not use this file except in compliance with the License.\n" +
                 "You may obtain a copy of the License at\n" +
@@ -31,7 +31,7 @@ public class Apache_2_0 extends LicenseInfos {
     }
 
     @Override
-    public String getFullText() {
+    public String getLongDescription() {
         return "TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n" +
                 "\n" +
                 "1. Definitions.\n" +
