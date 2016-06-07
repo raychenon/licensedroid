@@ -3,7 +3,7 @@ package com.raychenon.licensedroid.license;
 /**
  * Created by Raymond Chenon
  */
-public abstract class OpenSourceLicense {
+public abstract class LicenseInfos {
 
     public final String YEAR = "[yyyy]";
     public final String COPYRIGHT_HOLDER = "[owner]";

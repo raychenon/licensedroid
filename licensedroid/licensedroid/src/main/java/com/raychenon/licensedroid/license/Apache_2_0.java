@@ -4,7 +4,7 @@ package com.raychenon.licensedroid.license;
  * Created by Raymond Chenon
  * https://opensource.org/licenses/Apache-2.0
  */
-public class Apache_2_0 extends OpenSourceLicense {
+public class Apache_2_0 extends LicenseInfos {
 
     @Override
     public String getName() {

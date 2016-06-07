@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.raychenon.licensedroid.license.OpenSourceLicense;
+import com.raychenon.licensedroid.license.LicenseInfos;
 
 import java.util.List;
 
@@ -34,7 +34,7 @@ public class OpenSourceAdapter extends RecyclerView.Adapter<OpenSourceViewHolder
         if (item.isLicenseText){
             holder.tvLicense.setText(item.getLicenseText());
         }else{
-            OpenSourceLicense sourceLicense = item.getLicense().get();
+            LicenseInfos sourceLicense = item.getLicense().get();
             if (sourceLicense.hasCopyrightFormat()){
                 holder.tvLicense.setText(sourceLicense.getNiceCopyright(item.getYear(),item.getAuthor()));
             }else{

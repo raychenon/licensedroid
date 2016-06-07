@@ -3,7 +3,7 @@ package com.raychenon.licensedroid.license;
 /**
  * Created by Raymond Chenon
  */
-public class MIT extends OpenSourceLicense {
+public class MIT extends LicenseInfos {
 
     @Override
     public String getName() {

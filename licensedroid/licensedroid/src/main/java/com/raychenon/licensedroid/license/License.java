@@ -8,13 +8,13 @@ public enum License {
     APACHE_2(new Apache_2_0()),
     MIT(new MIT());
 
-    private OpenSourceLicense value;
+    private LicenseInfos value;
 
-    License(final OpenSourceLicense value) {
+    License(final LicenseInfos value) {
         this.value = value;
     }
 
-    public OpenSourceLicense get() {
+    public LicenseInfos get() {
         return value;
     }
 }
