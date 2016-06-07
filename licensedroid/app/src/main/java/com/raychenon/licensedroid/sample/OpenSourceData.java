@@ -13,9 +13,9 @@ public class OpenSourceData {
 
     public static List<OpenSource> getData(){
         List<OpenSource> list = new LinkedList<>();
-        list.add(new OpenSource("Butterknife", "Jake Wharton", "Apache License, Version 2.0"));
-        list.add(new OpenSource("ViewPagerIndicator", "Jake Wharton", "Apache License, Version 2.0"));
 
+        list.add(new OpenSource.Builder("Butterknife", "Jake Wharton", "Apache License, Version 2.0").build());
+        list.add(new OpenSource.Builder("ViewPagerIndicator", "Jake Wharton", "Apache License, Version 2.0").build());
         // add more
         list.addAll(list);
         list.addAll(list);
@@ -28,11 +28,8 @@ public class OpenSourceData {
 
     public static List<OpenSource> getLicenseData(){
         List<OpenSource> list = new LinkedList<>();
-        OpenSource butterknife = new OpenSource("Butterknife", "Jake Wharton", License.APACHE_2);
-        butterknife.setYear(2013);
-        list.add(butterknife);
-        list.add(new OpenSource("ViewPagerIndicator", "Jake Wharton",  License.MIT));
-
+        list.add(new OpenSource.Builder("Butterknife", "Jake Wharton", License.APACHE_2).withYear(2013).build());
+        list.add(new OpenSource.Builder("ViewPagerIndicator", "Jake Wharton",  License.MIT).build());
         // add more
         list.addAll(list);
         list.addAll(list);

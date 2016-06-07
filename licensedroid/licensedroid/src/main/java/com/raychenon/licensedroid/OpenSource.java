@@ -8,29 +8,15 @@ import com.raychenon.licensedroid.license.License;
 public class OpenSource {
 
     private final String libraryName;
-
     private final String author;
-
     private String licenseText;
     private License license;
+    // optional
+    private String libraryVersion;
+    private int year;
 
-    private int year; // TODO use a Builder pattern
-
+    // internal
     public final boolean isLicenseText;
-
-    public OpenSource(String libraryName, String author, String license) {
-        this.libraryName = libraryName;
-        this.author = author;
-        this.licenseText = license;
-        isLicenseText = true;
-    }
-
-    public OpenSource(String libraryName, String author, License license) {
-        this.libraryName = libraryName;
-        this.author = author;
-        this.license = license;
-        isLicenseText = false;
-    }
 
 
     public String getName() {
@@ -52,12 +38,56 @@ public class OpenSource {
     public int getYear() {
         return year;
     }
-    public void setYear(final int year) {
-        this.year = year;
+
+    public String getVersion() {
+        return libraryVersion;
     }
 
-    static class Builder{
-        private int year;
+    public static class Builder{
+        private String libraryName;
+        private String author;
+        private String licenseText;
+        private License license;
+        // optional
+        private String libraryVersion;
+        private int year; // TODO use a Builder pattern
+
+        public Builder(final String libraryName, final String author, final String licenseText) {
+            this.libraryName = libraryName;
+            this.author = author;
+            this.licenseText = licenseText;
+        }
+
+        public Builder(final String libraryName, final String author, final License license) {
+            this.libraryName = libraryName;
+            this.author = author;
+            this.license = license;
+        }
+
+        public Builder withVersion(final String libraryVersion) {
+            this.libraryName = libraryVersion;
+            return this;
+        }
+
+        public Builder withYear(final int year) {
+            this.year = year;
+            return this;
+        }
+
+        public OpenSource build() {
+            return new OpenSource(this);
+        }
+
+    }
+
+    public OpenSource(Builder builder) {
+        this.libraryName = builder.libraryName;
+        this.author = builder.author;
+        this.license = builder.license;
+        this.libraryVersion = builder.libraryVersion;
+        this.year = builder.year;
+
+        isLicenseText = licenseText != null;
     }
 
 }
