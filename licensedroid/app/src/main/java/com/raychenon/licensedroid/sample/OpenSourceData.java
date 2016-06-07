@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by Raymond Chenon
+ * @author Raymond Chenon
  */
 public class OpenSourceData {
 

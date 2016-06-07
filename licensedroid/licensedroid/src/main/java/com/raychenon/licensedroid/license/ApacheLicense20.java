@@ -1,7 +1,7 @@
 package com.raychenon.licensedroid.license;
 
 /**
- * Created by Raymond Chenon
+ * @author Raymond Chenon
  * https://opensource.org/licenses/Apache-2.0
  */
 public class ApacheLicense20 extends LicenseInfos {

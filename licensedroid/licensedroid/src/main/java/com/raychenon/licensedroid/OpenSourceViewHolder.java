@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 
 /**
- * Created by Raymond Chenon
+ * @author Raymond Chenon
  */
 public class OpenSourceViewHolder extends RecyclerView.ViewHolder {
 

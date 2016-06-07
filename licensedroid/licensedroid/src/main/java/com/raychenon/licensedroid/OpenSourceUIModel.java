@@ -1,7 +1,7 @@
 package com.raychenon.licensedroid;
 
 /**
- * Created by Raymond Chenon
+ * @author Raymond Chenon
  */
 public class OpenSourceUIModel {
 

@@ -10,7 +10,7 @@ import com.raychenon.licensedroid.license.LicenseInfos;
 import java.util.List;
 
 /**
- * Created by Raymond Chenon
+ * @author Raymond Chenon
  */
 public class OpenSourceAdapter extends RecyclerView.Adapter<OpenSourceViewHolder>{
 

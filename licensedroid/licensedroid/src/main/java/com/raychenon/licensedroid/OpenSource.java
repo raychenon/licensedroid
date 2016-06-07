@@ -3,7 +3,7 @@ package com.raychenon.licensedroid;
 import com.raychenon.licensedroid.license.License;
 
 /**
- * Created by Raymond Chenon
+ * @author Raymond Chenon
  */
 public class OpenSource {
 

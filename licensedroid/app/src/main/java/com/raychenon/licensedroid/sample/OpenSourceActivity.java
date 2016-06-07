@@ -11,7 +11,7 @@ import com.raychenon.licensedroid.sample.R;
 import com.raychenon.licensedroid.OpenSourceAdapter;
 
 /**
- * Created by Raymond Chenon
+ * @author Raymond Chenon
  */
 public class OpenSourceActivity extends Activity {
 

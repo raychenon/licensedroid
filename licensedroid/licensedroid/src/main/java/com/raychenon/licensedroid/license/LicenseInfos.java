@@ -1,7 +1,7 @@
 package com.raychenon.licensedroid.license;
 
 /**
- * Created by Raymond Chenon
+ * @author Raymond Chenon
  */
 public abstract class LicenseInfos {
 
