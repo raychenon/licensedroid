@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import com.raychenon.licensedroid.SimpleDividerItemDecoration;
 import com.raychenon.licensedroid.sample.R;
 
 import com.raychenon.licensedroid.OpenSourceAdapter;
@@ -34,7 +36,7 @@ public class OpenSourceActivity extends Activity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
 
         recyclerView.setLayoutManager(llm);
-        //recyclerView.addItemDecoration(new SimpleDividerItemDecoration(this));
+        recyclerView.addItemDecoration(new SimpleDividerItemDecoration(this)); // for the line divider
         recyclerView.setAdapter(adapter);
     }
 
