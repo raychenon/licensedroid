@@ -30,6 +30,11 @@ public class OpenSourceData {
         List<OpenSource> list = new LinkedList<>();
         list.add(new OpenSource.Builder("Butterknife", "Jake Wharton", License.APACHE_2).withYear(2013).build());
         list.add(new OpenSource.Builder("ViewPagerIndicator", "Jake Wharton",  License.MIT).build());
+        list.add(new OpenSource.Builder("Retrofit", "Square, Inc",  License.APACHE_2).withYear(2013).build());
+        list.add(new OpenSource.Builder("Picasso", "Square, Inc",  License.APACHE_2).withYear(2013).build());
+        list.add(new OpenSource.Builder("Moshi", "Square, Inc",  License.APACHE_2).withYear(2015).build());
+        list.add(new OpenSource.Builder("Flow", "Square, Inc",  License.APACHE_2).withYear(2013).build());
+
         // add more
         list.addAll(list);
         list.addAll(list);
