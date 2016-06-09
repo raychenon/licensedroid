@@ -84,6 +84,7 @@ public class OpenSource {
         this.libraryName = builder.libraryName;
         this.author = builder.author;
         this.license = builder.license;
+        this.licenseText = builder.licenseText;
         this.libraryVersion = builder.libraryVersion;
         this.year = builder.year;
 
