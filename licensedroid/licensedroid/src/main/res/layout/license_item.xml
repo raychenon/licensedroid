@@ -9,13 +9,15 @@
         android:id="@+id/licenseName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
+        android:textSize="16sp"
+        android:textColor="@color/library_name"
         android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/licenseType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"/>
+        android:textSize="14sp"
+        android:textColor="@color/black"/>
 
 </LinearLayout>
