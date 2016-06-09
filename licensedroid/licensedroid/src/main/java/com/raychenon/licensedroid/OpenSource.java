@@ -50,7 +50,7 @@ public class OpenSource {
         private License license;
         // optional
         private String libraryVersion;
-        private int year; // TODO use a Builder pattern
+        private int year;
 
         public Builder(final String libraryName, final String author, final String licenseText) {
             this.libraryName = libraryName;
