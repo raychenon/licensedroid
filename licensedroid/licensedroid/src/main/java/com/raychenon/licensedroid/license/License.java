@@ -6,7 +6,10 @@ package com.raychenon.licensedroid.license;
 public enum License {
 
     APACHE_2(new ApacheLicense20()),
-    MIT(new MITLicense());
+    BSD2(new BSD2ClauseLicense()),
+    BSD3(new BSD3ClauseLicense()),
+    MIT(new MITLicense()),
+    MOZILLA_PUBLIC_LICENSE(new MozillaPublicLicense20());
 
     private LicenseInfos value;
 
