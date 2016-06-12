@@ -26,7 +26,6 @@ public class OpenSourceDialogFragment extends DialogFragment {
 
         OpenSourceDialogFragment openSourceFragmentDialog = new OpenSourceDialogFragment();
 
-        // Get arguments passed in, if any
         Bundle args = openSourceFragmentDialog.getArguments();
         if (args == null) {
             args = new Bundle();
@@ -46,6 +45,8 @@ public class OpenSourceDialogFragment extends DialogFragment {
         if (args != null) {
             openSourceList = (ArrayList<OpenSource>) args.getSerializable(KEY_ARG_LIST_OPENSOURCE);
         }
+
+        setStyle(DialogFragment.STYLE_NORMAL, R.style.LicenseDroidDialog);
     }
 
     @Override
@@ -57,6 +58,14 @@ public class OpenSourceDialogFragment extends DialogFragment {
             dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         }
     }
+
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        Dialog dialog = super.onCreateDialog(savedInstanceState);
+        dialog.setTitle(getString(R.string.licensedroid_dialog_title));
+        return dialog;
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
