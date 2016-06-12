@@ -36,7 +36,7 @@ public class OpenSourceAdapter extends RecyclerView.Adapter<OpenSourceViewHolder
         }else{
             LicenseInfos sourceLicense = item.getLicense().get();
             if (sourceLicense.hasCopyrightFormat()){
-                holder.tvLicense.setText(sourceLicense.getNiceCopyright(item.getYear(),item.getAuthor() +  sourceLicense.getShortDescription()));
+                holder.tvLicense.setText(sourceLicense.getNiceCopyright(item.getYear(),item.getAuthor() + "\n" +  sourceLicense.getShortDescription()));
             }else{
                 holder.tvLicense.setText(sourceLicense.getShortDescription());
             }
