@@ -1,22 +1,22 @@
 package com.raychenon.licensedroid.sample;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.raychenon.licensedroid.OpenSourceAdapter;
-import com.raychenon.licensedroid.SimpleDividerItemDecoration;
+import com.raychenon.licensedroid.OpenSourceDialogFragment;
+
+import java.util.ArrayList;
 
 /**
  * @author Raymond Chenon
  */
-public class StartActivity extends Activity {
+public class StartActivity extends FragmentActivity {
 
     Button activityBtn;
+    Button dialogBtn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class StartActivity extends Activity {
         setContentView(R.layout.start_activity);
 
         activityBtn = (Button) findViewById(R.id.activity_button);
+        dialogBtn = (Button) findViewById(R.id.dialog_button);
 
         activityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,10 +32,22 @@ public class StartActivity extends Activity {
                 redirect();
             }
         });
+
+        dialogBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDialog();
+            }
+        });
     }
 
     private void redirect(){
         startActivity(new Intent(this,OpenSourceActivity.class));
+    }
+
+    private void showDialog() {
+        OpenSourceDialogFragment dialog = OpenSourceDialogFragment.newInstance(new ArrayList<>(OpenSourceData.getLicenseData()));
+        dialog.show(getSupportFragmentManager(), "dialog");
     }
 
 
