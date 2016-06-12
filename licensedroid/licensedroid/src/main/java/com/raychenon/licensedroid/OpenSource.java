@@ -2,11 +2,15 @@ package com.raychenon.licensedroid;
 
 import com.raychenon.licensedroid.license.License;
 
+import java.io.Serializable;
+
 /**
  * @author Raymond Chenon
  */
-public class OpenSource {
+public class OpenSource implements Serializable {
 
+    // internal
+    public final boolean isLicenseText;
     private final String libraryName;
     private final String author;
     private String licenseText;
@@ -15,9 +19,17 @@ public class OpenSource {
     private String libraryVersion;
     private int year;
 
-    // internal
-    public final boolean isLicenseText;
 
+    public OpenSource(Builder builder) {
+        this.libraryName = builder.libraryName;
+        this.author = builder.author;
+        this.license = builder.license;
+        this.licenseText = builder.licenseText;
+        this.libraryVersion = builder.libraryVersion;
+        this.year = builder.year;
+
+        isLicenseText = licenseText != null;
+    }
 
     public String getName() {
         return libraryName;
@@ -78,17 +90,6 @@ public class OpenSource {
             return new OpenSource(this);
         }
 
-    }
-
-    public OpenSource(Builder builder) {
-        this.libraryName = builder.libraryName;
-        this.author = builder.author;
-        this.license = builder.license;
-        this.licenseText = builder.licenseText;
-        this.libraryVersion = builder.libraryVersion;
-        this.year = builder.year;
-
-        isLicenseText = licenseText != null;
     }
 
 }
