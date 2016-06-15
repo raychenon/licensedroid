@@ -5,8 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.raychenon.licensedroid.license.LicenseInfos;
-
 import java.util.List;
 
 /**
@@ -15,9 +13,11 @@ import java.util.List;
 public class OpenSourceAdapter extends RecyclerView.Adapter<OpenSourceViewHolder>{
 
     private List<OpenSource> openSources;
+    private OpenSourceTransformer transformer;
 
     public OpenSourceAdapter(final List<OpenSource> openSourceList){
         this.openSources = openSourceList;
+        transformer = new OpenSourceTransformer();
     }
 
     @Override
@@ -28,19 +28,12 @@ public class OpenSourceAdapter extends RecyclerView.Adapter<OpenSourceViewHolder
 
     @Override
     public void onBindViewHolder(OpenSourceViewHolder holder, int position) {
-        OpenSource item = getItem(position);
+        OpenSource openSource = getItem(position);
 
-        holder.tvName.setText(String.format("%s %s",item.getName(), item.getAuthor()));
-        if (item.isLicenseText){
-            holder.tvLicense.setText(item.getLicenseText());
-        }else{
-            LicenseInfos sourceLicense = item.getLicense().get();
-            if (sourceLicense.hasCopyrightFormat()){
-                holder.tvLicense.setText(sourceLicense.getNiceCopyright(item.getYear(),item.getAuthor() + "\n" +  sourceLicense.getShortDescription()));
-            }else{
-                holder.tvLicense.setText(sourceLicense.getShortDescription());
-            }
-        }
+        OpenSourceUIModel item = transformer.transform(openSource);
+
+        holder.tvName.setText(String.format("%s %s", item.getLibraryName(), item.getAuthor()));
+        holder.tvLicense.setText(item.getLicense());
     }
 
     @Override
