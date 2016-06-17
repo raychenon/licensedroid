@@ -22,7 +22,7 @@ public class MITLicense extends LicenseInfos {
 
     @Override
     public String getCopyrightFormat() {
-        return String.format("Copyright (c)  %s  %s",YEAR,COPYRIGHT_HOLDER);
+        return String.format("Copyright (c) %s %s", YEAR, COPYRIGHT_HOLDER);
     }
 
 }

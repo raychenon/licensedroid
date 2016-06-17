@@ -21,9 +21,9 @@ public class OpenSourceTransformer {
         } else {
             LicenseInfos sourceLicense = openSource.getLicense().get();
             if (sourceLicense.hasCopyrightFormat()) {
-                return sourceLicense.getNiceCopyright(openSource.getYear(), openSource.getAuthor() + "\n" + sourceLicense.getShortDescription());
+                return sourceLicense.getNiceCopyright(openSource.getYear(), openSource.getAuthor()) + "\n" + sourceLicense.getDescription();
             } else {
-                return sourceLicense.getShortDescription();
+                return sourceLicense.getDescription();
             }
         }
     }
