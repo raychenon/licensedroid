@@ -29,7 +29,7 @@ public abstract class LicenseInfos {
         String copyright = getCopyrightFormat()
                 .replace(YEAR,String.valueOf(year))
                 .replace(COPYRIGHT_HOLDER,holder);
-        return getName() + " - " + copyright;
+        return copyright;
     }
 
     public boolean hasShortDescription(){
