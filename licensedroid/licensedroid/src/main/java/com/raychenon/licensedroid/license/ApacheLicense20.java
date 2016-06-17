@@ -31,7 +31,7 @@ public class ApacheLicense20 extends LicenseInfos {
     }
 
     @Override
-    public String getLongDescription() {
+    public String getLongerDescription() {
         return "TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n" +
                 "\n" +
                 "1. Definitions.\n" +

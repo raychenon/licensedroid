@@ -13,7 +13,11 @@ public abstract class LicenseInfos {
 
     abstract public String getDescription();
 
-    public String getLongDescription() {
+    /**
+     * optional if the license contains 2 descriptions
+     * @return the longer version of license
+     */
+    public String getLongerDescription() {
         return null;
     }
 

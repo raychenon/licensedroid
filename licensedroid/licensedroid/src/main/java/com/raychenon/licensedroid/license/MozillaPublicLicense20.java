@@ -17,7 +17,7 @@ public class MozillaPublicLicense20 extends LicenseInfos{
     }
 
     @Override
-    public String getLongDescription() {
+    public String getLongerDescription() {
         return "1. Definitions\n" +
                 "--------------\n" +
                 "\n" +
