@@ -29,7 +29,7 @@ public class OpenSourceData {
     public static List<OpenSource> getLicenseData(){
         List<OpenSource> list = new LinkedList<>();
         list.add(new OpenSource.Builder("Butterknife", "Jake Wharton", License.APACHE_2).withYear(2013).build());
-        list.add(new OpenSource.Builder("ViewPagerIndicator", "Jake Wharton",  License.MIT).build());
+        list.add(new OpenSource.Builder("ViewPagerIndicator", "Jake Wharton", License.MIT).withYear(2013).build());
         list.add(new OpenSource.Builder("Retrofit", "Square, Inc",  License.APACHE_2).withYear(2013).build());
         list.add(new OpenSource.Builder("Picasso", "Square, Inc",  License.APACHE_2).withYear(2013).build());
         list.add(new OpenSource.Builder("Moshi", "Square, Inc",  License.APACHE_2).withYear(2015).build());
