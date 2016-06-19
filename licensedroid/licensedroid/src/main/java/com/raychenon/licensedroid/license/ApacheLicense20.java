@@ -12,7 +12,7 @@ public class ApacheLicense20 extends LicenseInfos {
     }
 
     @Override
-    public String getDescription() {
+    public String getLicenseText() {
         return "Licensed under the Apache License, Version 2.0 (the \"License\");\n" +
                 "you may not use this file except in compliance with the License.\n" +
                 "You may obtain a copy of the License at\n" +
@@ -31,7 +31,7 @@ public class ApacheLicense20 extends LicenseInfos {
     }
 
     @Override
-    public String getLongerDescription() {
+    public String getLongerLicenseText() {
         return "TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n" +
                 "\n" +
                 "1. Definitions.\n" +

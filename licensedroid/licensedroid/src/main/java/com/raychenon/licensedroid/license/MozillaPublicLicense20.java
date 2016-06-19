@@ -12,12 +12,12 @@ public class MozillaPublicLicense20 extends LicenseInfos{
     }
 
     @Override
-    public String getDescription() {
+    public String getLicenseText() {
         return null;
     }
 
     @Override
-    public String getLongerDescription() {
+    public String getLongerLicenseText() {
         return "1. Definitions\n" +
                 "--------------\n" +
                 "\n" +

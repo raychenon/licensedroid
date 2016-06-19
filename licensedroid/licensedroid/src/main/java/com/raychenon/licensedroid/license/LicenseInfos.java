@@ -11,13 +11,13 @@ public abstract class LicenseInfos {
     abstract public String getName(); // include version
 
 
-    abstract public String getDescription();
+    abstract public String getLicenseText();
 
     /**
      * optional if the license contains 2 descriptions
      * @return the longer version of license
      */
-    public String getLongerDescription() {
+    public String getLongerLicenseText() {
         return null;
     }
 
@@ -37,7 +37,7 @@ public abstract class LicenseInfos {
     }
 
     public boolean hasShortDescription(){
-        return getDescription() != null;
+        return getLicenseText() != null;
     }
 
 }

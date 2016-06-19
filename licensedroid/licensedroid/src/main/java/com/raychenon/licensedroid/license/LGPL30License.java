@@ -12,7 +12,7 @@ public class LGPL30License extends LicenseInfos {
     }
 
     @Override
-    public String getDescription() {
+    public String getLicenseText() {
         return "GNU LESSER GENERAL PUBLIC LICENSE\n" +
                 "Version 3, 29 June 2007\n" +
                 "\n" +
