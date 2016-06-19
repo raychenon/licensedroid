@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.util.Log;
 
 import com.raychenon.licensedroid.SimpleDividerItemDecoration;
 
@@ -32,6 +33,8 @@ public class DividerRecyclerView extends RecyclerView {
     }
 
     private void init() {
+
+        Log.d("DividerRecyclerView", "[init]");
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         setLayoutManager(llm);
