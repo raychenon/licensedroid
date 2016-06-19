@@ -34,6 +34,8 @@ public class OpenSourceData {
         list.add(new OpenSource.Builder("Picasso", "Square, Inc",  License.APACHE_2).withYear(2013).build());
         list.add(new OpenSource.Builder("Moshi", "Square, Inc",  License.APACHE_2).withYear(2015).build());
         list.add(new OpenSource.Builder("Flow", "Square, Inc",  License.APACHE_2).withYear(2013).build());
+        list.add(new OpenSource.Builder("Advanced RecyclerView", "Haruki Hasegawa", License.APACHE_2).withYear(2015).build());
+        list.add(new OpenSource.Builder("Expandable RecyclerView", "Big Nerd Ranch", License.MIT).withYear(2015).build());
 
         list.add(new OpenSource.Builder("facebook-android-sdk", "Facebook, Inc",  "You are hereby granted a non-exclusive, worldwide, royalty-free license to use,\n" +
                 "copy, modify, and distribute this software in source code or binary form for use\n" +
