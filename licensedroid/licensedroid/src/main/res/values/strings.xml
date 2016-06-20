@@ -1,4 +1,4 @@
 <resources>
-    <string name="licensedroid_app_name">Licensedroid</string>
+    <string name="licensedroid_library">LicenseDroid</string>
     <string name="licensedroid_dialog_title">Open source licenses</string>
 </resources>

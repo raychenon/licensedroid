@@ -1,5 +1,5 @@
 <resources>
-    <string name="licensedroid_app_name">licensedroid</string>
+    <string name="licensedroid_app_name">LicenseDroid</string>
     <string name="licensedroid_activity">Activity</string>
     <string name="licensedroid_dialog">Dialog</string>
 </resources>

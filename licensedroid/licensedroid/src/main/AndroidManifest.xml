@@ -3,7 +3,7 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/licensedroid_app_name"
+        android:label="@string/licensedroid_library"
         android:supportsRtl="true">
 
     </application>
