@@ -2,6 +2,7 @@ package com.raychenon.licensedroid.sample;
 
 import com.raychenon.licensedroid.OpenSource;
 import com.raychenon.licensedroid.license.License;
+import com.raychenon.licensedroid.license.MapLicense;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -28,14 +29,14 @@ public class OpenSourceData {
 
     public static List<OpenSource> getLicenseData(){
         List<OpenSource> list = new LinkedList<>();
-        list.add(new OpenSource.Builder("Butterknife", "Jake Wharton", License.APACHE_2).withYear(2013).build());
-        list.add(new OpenSource.Builder("ViewPagerIndicator", "Jake Wharton", License.MIT).withYear(2013).build());
-        list.add(new OpenSource.Builder("Retrofit", "Square, Inc",  License.APACHE_2).withYear(2013).build());
-        list.add(new OpenSource.Builder("Picasso", "Square, Inc",  License.APACHE_2).withYear(2013).build());
-        list.add(new OpenSource.Builder("Moshi", "Square, Inc",  License.APACHE_2).withYear(2015).build());
-        list.add(new OpenSource.Builder("Flow", "Square, Inc",  License.APACHE_2).withYear(2013).build());
-        list.add(new OpenSource.Builder("Advanced RecyclerView", "Haruki Hasegawa", License.APACHE_2).withYear(2015).build());
-        list.add(new OpenSource.Builder("Expandable RecyclerView", "Big Nerd Ranch", License.MIT).withYear(2015).build());
+        list.add(new OpenSource.Builder("Butterknife", "Jake Wharton", MapLicense.APACHE2(2013)).withYear(2013).build());
+        list.add(new OpenSource.Builder("ViewPagerIndicator", "Jake Wharton", MapLicense.MIT()).withYear(2013).build());
+        list.add(new OpenSource.Builder("Retrofit", "Square, Inc",  MapLicense.APACHE2(2013)).build());
+        list.add(new OpenSource.Builder("Picasso", "Square, Inc",  MapLicense.APACHE2(2013)).withYear(2013).build());
+        list.add(new OpenSource.Builder("Moshi", "Square, Inc",  MapLicense.APACHE2(2015)).withYear(2015).build());
+        list.add(new OpenSource.Builder("Flow", "Square, Inc",  MapLicense.APACHE2(2013)).withYear(2013).build());
+        list.add(new OpenSource.Builder("Advanced RecyclerView", "Haruki Hasegawa", MapLicense.APACHE2(2015)).withYear(2015).build());
+        list.add(new OpenSource.Builder("Expandable RecyclerView", "Big Nerd Ranch", MapLicense.MIT()).withYear(2015).build());
 
         list.add(new OpenSource.Builder("facebook-android-sdk", "Facebook, Inc",  "You are hereby granted a non-exclusive, worldwide, royalty-free license to use,\n" +
                 "copy, modify, and distribute this software in source code or binary form for use\n" +

@@ -1,6 +1,7 @@
 package com.raychenon.licensedroid;
 
 import com.raychenon.licensedroid.license.License;
+import com.raychenon.licensedroid.license.LicenseInfos;
 
 import java.io.Serializable;
 
@@ -14,7 +15,7 @@ public class OpenSource implements Serializable {
     private final String libraryName;
     private final String author;
     private String licenseText;
-    private License license;
+    private LicenseInfos license;
     // optional
     private String libraryVersion;
     private int year;
@@ -43,7 +44,7 @@ public class OpenSource implements Serializable {
         return licenseText;
     }
 
-    public License getLicense() {
+    public LicenseInfos getLicense() {
         return license;
     }
 
@@ -59,7 +60,7 @@ public class OpenSource implements Serializable {
         private String libraryName;
         private String author;
         private String licenseText;
-        private License license;
+        private LicenseInfos license;
         // optional
         private String libraryVersion;
         private int year;
@@ -70,7 +71,7 @@ public class OpenSource implements Serializable {
             this.licenseText = licenseText;
         }
 
-        public Builder(final String libraryName, final String author, final License license) {
+        public Builder(final String libraryName, final String author, final LicenseInfos license) {
             this.libraryName = libraryName;
             this.author = author;
             this.license = license;

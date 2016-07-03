@@ -8,6 +8,8 @@ public abstract class LicenseInfos {
     public final String YEAR = "[yyyy]";
     public final String COPYRIGHT_HOLDER = "[owner]";
 
+    protected int year;
+
     abstract public String getName(); // include version
 
 
@@ -38,6 +40,10 @@ public abstract class LicenseInfos {
 
     public boolean hasShortDescription(){
         return getLicenseText() != null;
+    }
+
+    public int getYear(){
+        return year;
     }
 
 }

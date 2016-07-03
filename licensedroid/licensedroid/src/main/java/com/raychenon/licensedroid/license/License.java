@@ -5,7 +5,7 @@ package com.raychenon.licensedroid.license;
  */
 public enum License {
 
-    APACHE_2(new ApacheLicense20()),
+    //APACHE_2(new ApacheLicense20()),
     BSD_2(new BSD2ClauseLicense()),
     BSD_3(new BSD3ClauseLicense()),
     ECLIPSE_10(new EclipsePublicLicense10()),

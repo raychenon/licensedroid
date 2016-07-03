@@ -6,6 +6,10 @@ package com.raychenon.licensedroid.license;
  */
 public class ApacheLicense20 extends LicenseInfos {
 
+    public ApacheLicense20(final int year){
+        this.year = year;
+    }
+
     @Override
     public String getName() {
         return "Apache License, 2.0 (Apache-2.0)";
