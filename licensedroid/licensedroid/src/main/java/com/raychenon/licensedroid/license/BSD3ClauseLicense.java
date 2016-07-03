@@ -6,6 +6,10 @@ package com.raychenon.licensedroid.license;
  */
 public class BSD3ClauseLicense extends LicenseInfos {
 
+    public BSD3ClauseLicense(final int year){
+        this.year = year;
+    }
+
     @Override
     public String getName() {
         return "BSD 3-Clause \"New\" or \"Revised\" license";

@@ -5,6 +5,11 @@ package com.raychenon.licensedroid.license;
  * https://opensource.org/licenses/BSD-2-Clause
  */
 public class BSD2ClauseLicense extends LicenseInfos{
+
+    public BSD2ClauseLicense(final int year){
+        this.year = year;
+    }
+
     @Override
     public String getName() {
         return "BSD 2-Clause \"Simplified\" or \"FreeBSD\" license";

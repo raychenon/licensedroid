@@ -5,6 +5,11 @@ package com.raychenon.licensedroid.license;
  *         https://opensource.org/licenses/LGPL-2.1
  */
 public class LGPL21License extends LicenseInfos {
+
+    public LGPL21License(final int year){
+        this.year = year;
+    }
+
     @Override
     public String getName() {
         return "The GNU Lesser General Public License, version 2.1 (LGPL-2.1)";
