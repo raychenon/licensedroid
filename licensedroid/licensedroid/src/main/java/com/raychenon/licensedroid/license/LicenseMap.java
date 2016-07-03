@@ -4,7 +4,7 @@ package com.raychenon.licensedroid.license;
  * @author Raymond Chenon
  * used as key-value with different constructors but not a Map underneath
  */
-public class MapLicense {
+public class LicenseMap {
 
     public static LicenseInfos APACHE2(final int year){
         return new ApacheLicense20(year);
