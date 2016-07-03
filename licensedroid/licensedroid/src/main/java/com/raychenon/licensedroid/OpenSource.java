@@ -1,6 +1,5 @@
 package com.raychenon.licensedroid;
 
-import com.raychenon.licensedroid.license.License;
 import com.raychenon.licensedroid.license.LicenseInfos;
 
 import java.io.Serializable;

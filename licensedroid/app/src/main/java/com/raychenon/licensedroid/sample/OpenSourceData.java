@@ -1,7 +1,6 @@
 package com.raychenon.licensedroid.sample;
 
 import com.raychenon.licensedroid.OpenSource;
-import com.raychenon.licensedroid.license.License;
 import com.raychenon.licensedroid.license.MapLicense;
 
 import java.util.LinkedList;
