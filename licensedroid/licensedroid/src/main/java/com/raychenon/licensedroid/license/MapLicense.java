@@ -6,8 +6,8 @@ package com.raychenon.licensedroid.license;
  */
 public class MapLicense {
 
-    public static LicenseInfos MIT(){
-        return new MITLicense();
+    public static LicenseInfos MIT(final int year){
+        return new MITLicense(year);
     }
 
     public static LicenseInfos APACHE2(final int year){

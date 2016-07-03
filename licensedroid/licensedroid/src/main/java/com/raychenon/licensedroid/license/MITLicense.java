@@ -6,6 +6,10 @@ package com.raychenon.licensedroid.license;
  */
 public class MITLicense extends LicenseInfos {
 
+    public MITLicense(final int year){
+        this.year = year;
+    }
+
     @Override
     public String getName() {
         return "The MIT License (MIT)";

@@ -18,7 +18,6 @@ public class OpenSource implements Serializable {
     private LicenseInfos license;
     // optional
     private String libraryVersion;
-    private int year;
 
 
     public OpenSource(Builder builder) {
@@ -27,7 +26,6 @@ public class OpenSource implements Serializable {
         this.license = builder.license;
         this.licenseText = builder.licenseText;
         this.libraryVersion = builder.libraryVersion;
-        this.year = builder.year;
 
         isLicenseText = licenseText != null;
     }
@@ -48,10 +46,6 @@ public class OpenSource implements Serializable {
         return license;
     }
 
-    public int getYear() {
-        return year;
-    }
-
     public String getVersion() {
         return libraryVersion;
     }
@@ -63,7 +57,6 @@ public class OpenSource implements Serializable {
         private LicenseInfos license;
         // optional
         private String libraryVersion;
-        private int year;
 
         public Builder(final String libraryName, final String author, final String licenseText) {
             this.libraryName = libraryName;
@@ -79,11 +72,6 @@ public class OpenSource implements Serializable {
 
         public Builder withVersion(final String libraryVersion) {
             this.libraryName = libraryVersion;
-            return this;
-        }
-
-        public Builder withYear(final int year) {
-            this.year = year;
             return this;
         }
 

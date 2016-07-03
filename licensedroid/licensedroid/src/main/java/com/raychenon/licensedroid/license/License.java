@@ -11,7 +11,7 @@ public enum License {
     ECLIPSE_10(new EclipsePublicLicense10()),
     LGPL_21(new LGPL21License()),
     LGPL_30(new LGPL30License()),
-    MIT(new MITLicense()),
+   // MIT(new MITLicense()),
     MOZILLA_PUBLIC_LICENSE(new MozillaPublicLicense20());
 
     private LicenseInfos value;
