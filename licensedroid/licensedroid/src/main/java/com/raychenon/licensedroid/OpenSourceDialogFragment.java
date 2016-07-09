@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Raymond Chenon
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 public class OpenSourceDialogFragment extends DialogFragment {
 
     private static final String KEY_ARG_LIST_OPENSOURCE = "opensourceList";
-    private ArrayList<OpenSource> openSourceList; // List is not Serializable
+    private ArrayList<OpenSource> openSourceList;
 
     private RecyclerView recyclerView;
 
@@ -31,7 +32,7 @@ public class OpenSourceDialogFragment extends DialogFragment {
             args = new Bundle();
         }
         // Add parameters to the argument bundle
-        args.putSerializable(KEY_ARG_LIST_OPENSOURCE, openSourceList);
+        args.putParcelableArrayList(KEY_ARG_LIST_OPENSOURCE, openSourceList);
         openSourceFragmentDialog.setArguments(args);
 
         return openSourceFragmentDialog;

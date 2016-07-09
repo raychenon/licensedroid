@@ -1,5 +1,8 @@
 package com.raychenon.licensedroid;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.raychenon.licensedroid.license.LicenseInfos;
 
 import java.io.Serializable;
@@ -8,7 +11,7 @@ import java.io.Serializable;
  * @author Raymond Chenon
  * should be Parcelable not Serializable but I am too lazy without libraries
  */
-public class OpenSource implements Serializable {
+public class OpenSource implements Parcelable {
 
     // internal
     public final boolean isLicenseText;
@@ -81,4 +84,41 @@ public class OpenSource implements Serializable {
 
     }
 
+
+    protected OpenSource(Parcel in) {
+        isLicenseText = in.readByte() != 0x00;
+        libraryName = in.readString();
+        author = in.readString();
+        licenseText = in.readString();
+        license = (LicenseInfos) in.readValue(LicenseInfos.class.getClassLoader());
+        libraryVersion = in.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeByte((byte) (isLicenseText ? 0x01 : 0x00));
+        dest.writeString(libraryName);
+        dest.writeString(author);
+        dest.writeString(licenseText);
+        dest.writeValue(license);
+        dest.writeString(libraryVersion);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<OpenSource> CREATOR = new Parcelable.Creator<OpenSource>() {
+        @Override
+        public OpenSource createFromParcel(Parcel in) {
+            return new OpenSource(in);
+        }
+
+        @Override
+        public OpenSource[] newArray(int size) {
+            return new OpenSource[size];
+        }
+    };
 }
