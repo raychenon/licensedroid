@@ -6,6 +6,7 @@ import java.io.Serializable;
 
 /**
  * @author Raymond Chenon
+ * should be Parcelable not Serializable but I am too lazy without libraries
  */
 public class OpenSource implements Serializable {
 

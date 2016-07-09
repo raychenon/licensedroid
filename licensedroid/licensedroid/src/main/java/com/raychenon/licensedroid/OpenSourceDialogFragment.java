@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class OpenSourceDialogFragment extends DialogFragment {
 
     private static final String KEY_ARG_LIST_OPENSOURCE = "opensourceList";
-    private ArrayList<OpenSource> openSourceList;
+    private ArrayList<OpenSource> openSourceList; // List is not Serializable
 
     private RecyclerView recyclerView;
 
