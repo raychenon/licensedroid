@@ -2,6 +2,7 @@ package com.raychenon.licensedroid.sample;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -13,10 +14,10 @@ import com.raychenon.licensedroid.OpenSourceAdapter;
 /**
  * @author Raymond Chenon
  */
-public class OpenSourceActivity extends Activity {
+public class OpenSourceActivity extends AppCompatActivity {
 
 
-    RecyclerView recyclerView;
+    private RecyclerView recyclerView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,6 @@ public class OpenSourceActivity extends Activity {
         recyclerView = (RecyclerView) findViewById(R.id.licenseRecyclerView);
 
         initRecyclerView();
-
     }
 
     private void initRecyclerView(){
@@ -39,6 +39,5 @@ public class OpenSourceActivity extends Activity {
         recyclerView.addItemDecoration(new SimpleDividerItemDecoration(this)); // for the line divider
         recyclerView.setAdapter(adapter);
     }
-
 
 }

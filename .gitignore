@@ -2,3 +2,8 @@ library/.idea
 licensedroid/.idea
 licensedroid/licensedroid/build
 .idea
+.gradle
+build
+gradle
+licensedroid-parent.iml
+licensedroid.iml
