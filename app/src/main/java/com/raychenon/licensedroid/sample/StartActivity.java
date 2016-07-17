@@ -32,7 +32,7 @@ public class StartActivity extends AppCompatActivity {
         activityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                redirect();
+                redirect(OpenSourceActivity.class);
             }
         });
 
@@ -46,12 +46,12 @@ public class StartActivity extends AppCompatActivity {
         fragmentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                commitFragment();
+                redirect(OpenSourceFragActivity.class);
             }
         });
     }
 
-    private void redirect(){
+    private void redirect(final  Class<?> cls){
         startActivity(new Intent(this,OpenSourceActivity.class));
     }
 
@@ -59,12 +59,5 @@ public class StartActivity extends AppCompatActivity {
         OpenSourceDialogFragment dialog = OpenSourceDialogFragment.newInstance(new ArrayList<>(OpenSourceData.getLicenseData()));
         dialog.show(getSupportFragmentManager(), "dialog");
     }
-
-    private void commitFragment(){
-        OpenSourceFragment fragment = OpenSourceFragment.newInstance(new ArrayList<>(OpenSourceData.getLicenseData()));
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container, fragment).commit();
-    }
-
 
 }

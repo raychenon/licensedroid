@@ -31,6 +31,14 @@
             android:screenOrientation="portrait">
         </activity>
 
+        <activity
+            android:name=".OpenSourceFragActivity"
+            android:label="@string/licensedroid_app_name"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
+        </activity>
+
+
     </application>
 
 </manifest>
