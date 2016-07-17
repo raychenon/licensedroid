@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.raychenon.licensedroid.OpenSourceDialogFragment;
+import com.raychenon.licensedroid.OpenSourceFragment;
 
 import java.util.ArrayList;
 
@@ -17,6 +18,7 @@ public class StartActivity extends AppCompatActivity {
 
     Button activityBtn;
     Button dialogBtn;
+    Button fragmentBtn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,7 @@ public class StartActivity extends AppCompatActivity {
 
         activityBtn = (Button) findViewById(R.id.activity_button);
         dialogBtn = (Button) findViewById(R.id.dialog_button);
+        fragmentBtn = (Button) findViewById(R.id.fragment_button);
 
         activityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +42,13 @@ public class StartActivity extends AppCompatActivity {
                 showDialog();
             }
         });
+
+        fragmentBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                commitFragment();
+            }
+        });
     }
 
     private void redirect(){
@@ -48,6 +58,12 @@ public class StartActivity extends AppCompatActivity {
     private void showDialog() {
         OpenSourceDialogFragment dialog = OpenSourceDialogFragment.newInstance(new ArrayList<>(OpenSourceData.getLicenseData()));
         dialog.show(getSupportFragmentManager(), "dialog");
+    }
+
+    private void commitFragment(){
+        OpenSourceFragment fragment = OpenSourceFragment.newInstance(new ArrayList<>(OpenSourceData.getLicenseData()));
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.fragment_container, fragment).commit();
     }
 
 
