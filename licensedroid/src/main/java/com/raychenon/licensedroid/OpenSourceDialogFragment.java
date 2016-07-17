@@ -23,6 +23,8 @@ public class OpenSourceDialogFragment extends DialogFragment {
 
     private RecyclerView recyclerView;
 
+    FragmentDelegate delegate;
+
     public static OpenSourceDialogFragment newInstance(final ArrayList<OpenSource> openSourceList) {
 
         OpenSourceDialogFragment openSourceFragmentDialog = new OpenSourceDialogFragment();
@@ -41,11 +43,12 @@ public class OpenSourceDialogFragment extends DialogFragment {
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Set incoming parameters
-        Bundle args = getArguments();
-        if (args != null) {
-            openSourceList = (ArrayList<OpenSource>) args.getSerializable(KEY_ARG_LIST_OPENSOURCE);
+
+        if (delegate == null){
+            delegate = new FragmentDelegate();
         }
+
+        openSourceList = delegate.onCreate(getArguments(), KEY_ARG_LIST_OPENSOURCE);
 
         setStyle(DialogFragment.STYLE_NORMAL, R.style.LicenseDroidDialog);
     }
@@ -73,7 +76,7 @@ public class OpenSourceDialogFragment extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.opensource_dialog, container);
+        return delegate.onCreateView(inflater, container, savedInstanceState);
     }
 
     @Override
@@ -82,9 +85,7 @@ public class OpenSourceDialogFragment extends DialogFragment {
 
         recyclerView = (RecyclerView) view.findViewById(R.id.licensedroidOpenSourceRecyclerView);
 
-        OpenSourceAdapter adapter = new OpenSourceAdapter(openSourceList);
-
-        recyclerView.setAdapter(adapter);
+        delegate.onViewCreated(recyclerView, openSourceList);
     }
 
 

@@ -19,6 +19,8 @@ public class OpenSourceFragment extends Fragment {
 
     private RecyclerView recyclerView;
 
+    FragmentDelegate delegate;
+
     public static OpenSourceFragment newInstance(final ArrayList<OpenSource> openSourceList) {
 
         OpenSourceFragment fragment = new OpenSourceFragment();
@@ -30,7 +32,6 @@ public class OpenSourceFragment extends Fragment {
         // Add parameters to the argument bundle
         args.putParcelableArrayList(KEY_ARG_LIST_OPENSOURCE, openSourceList);
         fragment.setArguments(args);
-
         return fragment;
     }
 
@@ -39,17 +40,19 @@ public class OpenSourceFragment extends Fragment {
         super.onCreate(savedInstanceState);
         // Set incoming parameters
         Bundle args = getArguments();
-        if (args != null) {
-            openSourceList = (ArrayList<OpenSource>) args.getSerializable(KEY_ARG_LIST_OPENSOURCE);
+
+        if (delegate == null){
+            delegate = new FragmentDelegate();
         }
 
+        openSourceList = delegate.onCreate(args, KEY_ARG_LIST_OPENSOURCE);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.opensource_dialog, container,false);
+        return delegate.onCreateView(inflater, container, savedInstanceState);
     }
 
     @Override
@@ -58,8 +61,6 @@ public class OpenSourceFragment extends Fragment {
 
         recyclerView = (RecyclerView) view.findViewById(R.id.licensedroidOpenSourceRecyclerView);
 
-        OpenSourceAdapter adapter = new OpenSourceAdapter(openSourceList);
-
-        recyclerView.setAdapter(adapter);
+        delegate.onViewCreated(recyclerView,openSourceList);
     }
 }
