@@ -1,9 +1,11 @@
 package com.raychenon.licensedroid.license;
 
+import java.io.Serializable;
+
 /**
  * @author Raymond Chenon
  */
-public abstract class LicenseInfos {
+public abstract class LicenseInfos implements Serializable {
 
     public final String YEAR = "[yyyy]";
     public final String COPYRIGHT_HOLDER = "[owner]";

@@ -105,7 +105,7 @@ public class OpenSource implements Parcelable {
         dest.writeString(libraryName);
         dest.writeString(author);
         dest.writeString(licenseText);
-        dest.writeValue(license);
+        dest.writeSerializable(license);
         dest.writeString(libraryVersion);
     }
 
