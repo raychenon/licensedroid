@@ -32,7 +32,8 @@ public class OpenSourceAdapter extends RecyclerView.Adapter<OpenSourceViewHolder
 
         OpenSourceUIModel item = transformer.transform(openSource);
 
-        holder.tvName.setText(String.format("%s %s", item.getLibraryName(), item.getAuthor()));
+        holder.tvName.setText(item.getLibraryName());
+        holder.tvAuthor.setText(item.getAuthor());
         holder.tvLicense.setText(item.getLicense());
     }
 
