@@ -3,4 +3,5 @@
     <string name="licensedroid_activity">Custom Activity</string>
     <string name="licensedroid_fragment">With OpenSourceFragment</string>
     <string name="licensedroid_dialog">Dialog</string>
+    <string name="licensedroid_custom_viewholder">Custom ViewHolder</string>
 </resources>

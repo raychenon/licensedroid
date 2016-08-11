@@ -19,6 +19,7 @@ public class StartActivity extends AppCompatActivity {
     Button activityBtn;
     Button dialogBtn;
     Button fragmentBtn;
+    Button customViewHolderBtn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class StartActivity extends AppCompatActivity {
         activityBtn = (Button) findViewById(R.id.activity_button);
         dialogBtn = (Button) findViewById(R.id.dialog_button);
         fragmentBtn = (Button) findViewById(R.id.fragment_button);
+        customViewHolderBtn = (Button) findViewById(R.id.custom_viewholder_button);
 
         activityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,10 +51,17 @@ public class StartActivity extends AppCompatActivity {
                 redirect(OpenSourceFragActivity.class);
             }
         });
+
+        customViewHolderBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                redirect(CustomViewHolderActivity.class);
+            }
+        });
     }
 
     private void redirect(final  Class<?> cls){
-        startActivity(new Intent(this,OpenSourceActivity.class));
+        startActivity(new Intent(this,cls));
     }
 
     private void showDialog() {
