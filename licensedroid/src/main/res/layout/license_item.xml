@@ -5,11 +5,6 @@
     android:layout_height="wrap_content"
     android:padding="@dimen/license_item_padding">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
     <TextView
         android:id="@+id/licenseName"
         android:layout_width="wrap_content"
@@ -17,16 +12,6 @@
         android:textSize="16sp"
         android:textColor="@color/library_name"
         android:textStyle="bold"/>
-
-    <TextView
-        android:id="@+id/licenseAuthor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@color/dark_gray"/>
-
-    </LinearLayout>
 
     <TextView
         android:id="@+id/licenseType"
