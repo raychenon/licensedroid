@@ -32,7 +32,9 @@ dependencies {
 
 def siteUrl = 'https://github.com/raychenon/LicenseDroid'      // Homepage URL of the library
 def gitUrl = 'https://github.com/raychenon/LicenseDroid.git'   // Git repository URL
+def genDescription = 'A library to generate your Open Source licenses page'
 group = "com.raychenon"                                          // Maven Group ID for the artifact
+version = '0.1-SNAPSHOT'
 
 install {
     repositories.mavenInstaller {
@@ -43,7 +45,8 @@ install {
 
                 // Add your description here
                 name 'com.raychenon:licensedroid'
-                description = 'A library to generate your Open Source licenses page' // TODO
+                description = genDescription
+                version '0.1'
                 url siteUrl
 
                 // Set your license
@@ -106,8 +109,8 @@ bintray {
         publish = true
 
         version {
-            name = '0.1-test'
-            desc = 'A library to generate your Open Source licenses page'
+            name = '0.1-SNAPSHOT'
+            desc = genDescription
             released  = new Date()
             vcsTag = '0.1'
         }
