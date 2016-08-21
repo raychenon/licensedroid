@@ -33,7 +33,7 @@ dependencies {
 def siteUrl = 'https://github.com/raychenon/LicenseDroid'      // Homepage URL of the library
 def gitUrl = 'https://github.com/raychenon/LicenseDroid.git'   // Git repository URL
 def genDescription = 'A library to generate your Open Source licenses page'
-group = "com.raychenon"                                          // Maven Group ID for the artifact
+group = 'com.raychenon'
 version = '0.1-SNAPSHOT'
 
 install {
@@ -84,9 +84,12 @@ task javadoc(type: Javadoc) {
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
     from javadoc.destinationDir
+    classifier = 'javadoc'
 }
+
+javadocJar.dependsOn javadoc
+
 artifacts {
     archives javadocJar
     archives sourcesJar
