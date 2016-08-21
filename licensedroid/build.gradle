@@ -34,7 +34,7 @@ def siteUrl = 'https://github.com/raychenon/LicenseDroid'      // Homepage URL o
 def gitUrl = 'https://github.com/raychenon/LicenseDroid.git'   // Git repository URL
 def genDescription = 'A library to generate your Open Source licenses page'
 group = 'com.raychenon'
-version = '0.1-TEST'
+version = '0.1.0'
 
 install {
     repositories.mavenInstaller {
@@ -43,10 +43,9 @@ install {
             project {
                 packaging 'aar'
 
-                // Add your description here
                 name 'com.raychenon:licensedroid'
                 description = genDescription
-                version '0.1'
+                version version
                 url siteUrl
 
                 // Set your license
@@ -99,8 +98,8 @@ Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
 bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
+    user = properties.getProperty('bintray.user')
+    key = properties.getProperty('bintray.apikey')
 
     configurations = ['archives']
     pkg {
@@ -112,10 +111,10 @@ bintray {
         publish = true
 
         version {
-            name = '0.1.0-TEST'
+            name = '0.1.0'
             desc = genDescription
             released  = new Date()
-            vcsTag = '0.1'
+            vcsTag = '0.1.0'
         }
     }
     configurations = ['archives']
