@@ -22,3 +22,21 @@ list.add(new OpenSource.Builder("facebook-android-sdk", "Facebook, Inc",  "You a
 OpenSourceDialogFragment dialog = OpenSourceDialogFragment.newInstance(list);
 dialog.show(getSupportFragmentManager(), "dialog");
 ```
+
+Library Project
+============
+To use License Droid as a library, add the repository to the module's build.gradle (not the parent):
+
+```
+repositories {
+  maven { url 'https://dl.bintray.com/raychenon/maven' }
+}
+
+```
+
+Then add this dependency
+```
+dependencies {
+  compile 'com.raychenon:licensedroid:0.1.0'
+}
+```
