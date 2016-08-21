@@ -1,6 +1,8 @@
 License Droid
 ============
 
+![Alt text](/images/preview_licensedroid.png "Preview")
+
 Avoid boiler plate code to display one page "open source". 
 * Write the list of libraries in a few lines
 * Select the license type with `LicenseMap`
