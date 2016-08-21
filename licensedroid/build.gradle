@@ -34,7 +34,7 @@ def siteUrl = 'https://github.com/raychenon/LicenseDroid'      // Homepage URL o
 def gitUrl = 'https://github.com/raychenon/LicenseDroid.git'   // Git repository URL
 def genDescription = 'A library to generate your Open Source licenses page'
 group = 'com.raychenon'
-version = '0.1-SNAPSHOT'
+version = '0.1-TEST'
 
 install {
     repositories.mavenInstaller {
@@ -58,9 +58,9 @@ install {
                 }
                 developers {
                     developer {
-                        id 'raychenon' // TODO
-                        name 'Raymond Chenon' // TODO
-                        email 'raymond.chenon@gmail.com' // TODO
+                        id 'raychenon'
+                        name 'Raymond Chenon'
+                        email 'raymond.chenon@gmail.com'
                     }
                 }
                 scm {
@@ -112,7 +112,7 @@ bintray {
         publish = true
 
         version {
-            name = '0.1-SNAPSHOT'
+            name = '0.1.0-TEST'
             desc = genDescription
             released  = new Date()
             vcsTag = '0.1'
