@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Raymond Chenon
@@ -83,9 +82,7 @@ public class OpenSourceDialogFragment extends DialogFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.licensedroidOpenSourceRecyclerView);
-
-        delegate.onViewCreated(recyclerView, openSourceList);
+        delegate.bindDataToRecyclerView(openSourceList);
     }
 
 

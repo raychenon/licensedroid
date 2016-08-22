@@ -59,8 +59,6 @@ public class OpenSourceFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.licensedroidOpenSourceRecyclerView);
-
-        delegate.onViewCreated(recyclerView,openSourceList);
+        delegate.bindDataToRecyclerView(openSourceList);
     }
 }
