@@ -13,6 +13,8 @@ import java.util.ArrayList;
  */
 class FragmentDelegate {
 
+    private View view;
+
     public ArrayList<OpenSource> onCreate(final Bundle args, final String KEY_ARG) {
         // Set incoming parameters
         if (args != null) {
@@ -25,12 +27,18 @@ class FragmentDelegate {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.opensource_dialog, container,false);
+        view = inflater.inflate(R.layout.opensource_dialog, container,false);
+        return view;
     }
 
-    public void onViewCreated(final RecyclerView recyclerView, final ArrayList<OpenSource> openSourceList) {
+    public void bindDataToRecyclerView(final ArrayList<OpenSource> openSourceList) {
+        RecyclerView recyclerView = getRecyclerView();
         OpenSourceAdapter adapter = new OpenSourceAdapter(openSourceList);
         recyclerView.setAdapter(adapter);
+    }
+
+    private RecyclerView getRecyclerView(){
+        return (RecyclerView) view.findViewById(R.id.licensedroidOpenSourceRecyclerView);
     }
 
 }
