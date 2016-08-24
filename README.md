@@ -27,18 +27,34 @@ dialog.show(getSupportFragmentManager(), "dialog");
 
 Library Project
 ============
-To use License Droid as a library, add the repository to the module's build.gradle (not the parent):
-
-```
-repositories {
-  maven { url 'https://dl.bintray.com/raychenon/maven' }
+To use License Droid as a library, configure the project level `build.gradle` then add LicenseDroid :
+```groovy
+buildscript {
+  repositories {
+    jcenter()
+    // add this repo if jcenter doesn't work
+    // maven { url 'https://dl.bintray.com/raychenon/maven' }
+   }
 }
 
-```
-
-Then add this dependency
-```
 dependencies {
-  compile 'com.raychenon:licensedroid:0.1.0'
+    compile 'com.raychenon:licensedroid:0.1.0'
 }
 ```
+
+License
+-------
+
+    Copyright 2016 Raymond Chenon
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
