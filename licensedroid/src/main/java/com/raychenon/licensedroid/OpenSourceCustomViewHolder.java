@@ -9,14 +9,12 @@ import android.view.ViewGroup;
 /**
  * @author Raymond Chenon
  */
-public class OpenSourceCustomViewHolder extends RecyclerView.ViewHolder{
+public abstract class OpenSourceCustomViewHolder extends RecyclerView.ViewHolder{
 
-    public  OpenSourceCustomViewHolder(View itemView){
+    public OpenSourceCustomViewHolder(View itemView){
         super(itemView);
     }
 
-    public void delegateOnBindViewHolder(final OpenSourceUIModel item){
-
-    }
+    public abstract void delegateOnBindViewHolder(final OpenSourceUIModel item);
 
 }

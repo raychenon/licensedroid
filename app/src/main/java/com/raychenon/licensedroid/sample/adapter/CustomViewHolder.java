@@ -19,9 +19,14 @@ public class CustomViewHolder extends OpenSourceCustomViewHolder {
     private TextView tvAuthor;
     private TextView tvLicense;
 
+    private int itemViewType;
+
 
     public CustomViewHolder(final ViewGroup parent, final int viewType) {
         super(parent);
+
+        this.itemViewType = viewType;
+
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View itemView = inflater.inflate(R.layout.custom_list_item, parent);
 
@@ -40,4 +45,5 @@ public class CustomViewHolder extends OpenSourceCustomViewHolder {
         tvAuthor.setText(item.getAuthor());
         tvLicense.setText(item.getLicense());
     }
+
 }

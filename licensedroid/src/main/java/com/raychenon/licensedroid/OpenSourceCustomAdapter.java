@@ -26,7 +26,7 @@ public  class OpenSourceCustomAdapter extends RecyclerView.Adapter<OpenSourceCus
     @Override
     public OpenSourceCustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         try {
-            this.viewHolder =  cls.getDeclaredConstructor(ViewGroup.class, Integer.class).newInstance(parent,viewType);
+            this.viewHolder =  cls.getDeclaredConstructor(ViewGroup.class, int.class).newInstance(parent,viewType);
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
