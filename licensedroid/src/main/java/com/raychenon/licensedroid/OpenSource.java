@@ -33,7 +33,7 @@ public class OpenSource implements Parcelable {
         isLicenseText = licenseText != null;
     }
 
-    public String getName() {
+    public String getProjectName() {
         return libraryName;
     }
 
