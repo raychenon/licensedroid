@@ -12,7 +12,7 @@ public class OpenSourceTransformer {
 
     public OpenSourceUIModel transform(final OpenSource openSource) {
 
-        return new OpenSourceUIModel(openSource.getName(), openSource.getAuthor(), extractLicenseText(openSource));
+        return new OpenSourceUIModel(openSource.getProjectName(), openSource.getAuthor(), extractLicenseText(openSource));
     }
 
     private String extractLicenseText(final OpenSource openSource) {

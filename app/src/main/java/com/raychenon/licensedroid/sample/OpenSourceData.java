@@ -16,7 +16,7 @@ public class OpenSourceData {
     final static Comparator<OpenSource> comparator = new Comparator<OpenSource>() {
         @Override
         public int compare(OpenSource lhs, OpenSource rhs) {
-            return lhs.getName().compareTo(rhs.getName());
+            return lhs.getProjectName().compareTo(rhs.getProjectName());
         }
     };
 
