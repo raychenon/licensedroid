@@ -8,21 +8,21 @@
         android:id="@+id/activity_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        style="@style/StartButtonSyle"
         android:text="@string/licensedroid_activity"/>
 
     <Button
         android:id="@+id/fragment_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        style="@style/StartButtonSyle"
         android:text="@string/licensedroid_fragment"/>
 
     <Button
         android:id="@+id/dialog_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        style="@style/StartButtonSyle"
         android:text="@string/licensedroid_dialog"/>
 
     <Button
