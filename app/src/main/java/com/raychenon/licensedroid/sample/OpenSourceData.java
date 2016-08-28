@@ -3,6 +3,8 @@ package com.raychenon.licensedroid.sample;
 import com.raychenon.licensedroid.OpenSource;
 import com.raychenon.licensedroid.license.LicenseMap;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -11,20 +13,12 @@ import java.util.List;
  */
 public class OpenSourceData {
 
-    public static List<OpenSource> getData(){
-        List<OpenSource> list = new LinkedList<>();
-
-        list.add(new OpenSource.Builder("Butterknife", "Jake Wharton", "Apache License, Version 2.0").build());
-        list.add(new OpenSource.Builder("ViewPagerIndicator", "Jake Wharton", "Apache License, Version 2.0").build());
-        // add more
-        list.addAll(list);
-        list.addAll(list);
-        list.addAll(list);
-        list.addAll(list);
-        list.addAll(list);
-
-        return list;
-    }
+    final static Comparator<OpenSource> comparator = new Comparator<OpenSource>() {
+        @Override
+        public int compare(OpenSource lhs, OpenSource rhs) {
+            return lhs.getName().compareTo(rhs.getName());
+        }
+    };
 
     public static List<OpenSource> getLicenseData(){
         List<OpenSource> list = new LinkedList<>();
@@ -36,6 +30,7 @@ public class OpenSourceData {
         list.add(new OpenSource.Builder("Flow", "Square, Inc",  LicenseMap.APACHE2(2013)).build());
         list.add(new OpenSource.Builder("Advanced RecyclerView", "Haruki Hasegawa", LicenseMap.APACHE2(2015)).build());
         list.add(new OpenSource.Builder("Expandable RecyclerView", "Big Nerd Ranch", LicenseMap.MIT(2015)).build());
+        list.add(new OpenSource.Builder("LicenseDroid", "Raymond Chenon", LicenseMap.APACHE2(2016)).build());
 
         list.add(new OpenSource.Builder("facebook-android-sdk", "Facebook, Inc",  "You are hereby granted a non-exclusive, worldwide, royalty-free license to use,\n" +
                 "copy, modify, and distribute this software in source code or binary form for use\n" +
@@ -53,8 +48,7 @@ public class OpenSourceData {
                 "IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\n" +
                 "CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.").build());
 
-        // add more
-        list.addAll(list);
+        Collections.sort(list,comparator);
 
         return list;
     }
