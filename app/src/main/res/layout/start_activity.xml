@@ -29,7 +29,7 @@
         android:id="@+id/custom_viewholder_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        style="@style/StartButtonSyle"
         android:text="@string/licensedroid_custom_viewholder"/>
 
 </LinearLayout>
