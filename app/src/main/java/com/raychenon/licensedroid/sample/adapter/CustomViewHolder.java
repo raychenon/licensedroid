@@ -1,5 +1,6 @@
 package com.raychenon.licensedroid.sample.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,10 +20,13 @@ public class CustomViewHolder extends OpenSourceCustomViewHolder {
     private TextView tvLicense;
 
 
-    public CustomViewHolder(final ViewGroup parent) {
+    public CustomViewHolder(final ViewGroup parent, final int viewType) {
         super(parent);
-        LayoutInflater inflater = LayoutInflater.from(parent.getContext());;
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View itemView = inflater.inflate(R.layout.custom_list_item, parent);
+
+//        LayoutInflater inflater = (LayoutInflater) parent.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//        View itemView = inflater.inflate(R.layout.custom_list_item, null);
 
         tvName = (TextView) itemView.findViewById(R.id.libraryName);
         tvAuthor = (TextView) itemView.findViewById(R.id.libraryAuthor);
