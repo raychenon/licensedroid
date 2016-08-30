@@ -15,6 +15,6 @@ public abstract class OpenSourceCustomViewHolder extends RecyclerView.ViewHolder
         super(itemView);
     }
 
-    public abstract void delegateOnBindViewHolder(final OpenSourceUIModel item);
+    public abstract void bindData(final OpenSourceUIModel item);
 
 }

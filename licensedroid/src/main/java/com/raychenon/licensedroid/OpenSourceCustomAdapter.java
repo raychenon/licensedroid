@@ -1,6 +1,7 @@
 package com.raychenon.licensedroid;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.view.ViewGroup;
 
 import java.lang.reflect.InvocationTargetException;
@@ -44,7 +45,7 @@ public  class OpenSourceCustomAdapter extends RecyclerView.Adapter<OpenSourceCus
         OpenSource openSource = getItem(position);
         OpenSourceUIModel item = transformer.transform(openSource);
 
-        holder.delegateOnBindViewHolder(item);
+        holder.bindData(item);
     }
 
     @Override
