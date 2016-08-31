@@ -22,10 +22,8 @@ public class CustomViewHolder extends OpenSourceCustomViewHolder {
     public CustomViewHolder(final ViewGroup parent, final int viewType) {
         super(parent);
 
-
-        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-//        View itemView = inflater.inflate(R.layout.custom_list_item, parent, false);
-        View itemView =  inflater.inflate(R.layout.custom_list_item, null);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(
+                R.layout.custom_list_item, parent,false);
 
         if(itemView.getParent()!=null){
             ((ViewGroup)itemView.getParent()).removeView(itemView);
