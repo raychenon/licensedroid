@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.List;
 
 /**
@@ -26,10 +27,11 @@ public  class OpenSourceCustomAdapter extends RecyclerView.Adapter<OpenSourceCus
 
     @Override
     public OpenSourceCustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        OpenSourceCustomViewHolder vh = null;
         try {
-            this.viewHolder =  cls.getDeclaredConstructor(ViewGroup.class, int.class).newInstance(parent,viewType);
-        } catch (InstantiationException e) {
-            e.printStackTrace();
+            Class[] cArg = {ViewGroup.class, int.class};
+            Method instantateMethod = cls.getMethod("instantate", cArg);
+            vh = (OpenSourceCustomViewHolder) instantateMethod.invoke(null, parent, viewType);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
@@ -37,7 +39,7 @@ public  class OpenSourceCustomAdapter extends RecyclerView.Adapter<OpenSourceCus
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }
-        return viewHolder;
+        return vh;
     }
 
     @Override

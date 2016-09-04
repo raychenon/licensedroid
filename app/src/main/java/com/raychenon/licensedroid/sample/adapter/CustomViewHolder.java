@@ -19,19 +19,15 @@ public class CustomViewHolder extends OpenSourceCustomViewHolder {
     private TextView tvAuthor;
     private TextView tvLicense;
 
-    public CustomViewHolder(final ViewGroup parent, final int viewType) {
-        super(parent);
 
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(
-                R.layout.custom_list_item, parent,false);
+    public static CustomViewHolder instantate(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_list_item, parent, false);
+        CustomViewHolder vh = new CustomViewHolder(v);
+        return vh;
+    }
 
-        if(itemView.getParent()!=null){
-            ((ViewGroup)itemView.getParent()).removeView(itemView);
-        }
-
-        if(parent.getParent()!=null){
-            ((ViewGroup)parent.getParent()).removeView(parent);
-        }
+    public CustomViewHolder(final View itemView) {
+        super(itemView);
 
         tvName = (TextView) itemView.findViewById(R.id.libraryName);
         tvAuthor = (TextView) itemView.findViewById(R.id.libraryAuthor);
