@@ -11,6 +11,10 @@ import android.view.ViewGroup;
  */
 public abstract class OpenSourceCustomViewHolder extends RecyclerView.ViewHolder{
 
+    public interface Factory{
+        public abstract OpenSourceCustomViewHolder createViewHolder(ViewGroup parent, int viewType);
+    }
+
     public OpenSourceCustomViewHolder(View itemView){
         super(itemView);
     }

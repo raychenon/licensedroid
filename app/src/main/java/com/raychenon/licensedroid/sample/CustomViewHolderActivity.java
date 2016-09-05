@@ -30,7 +30,7 @@ public class CustomViewHolderActivity extends AppCompatActivity {
 
     private void initRecyclerView(){
 
-        OpenSourceCustomAdapter adapter = new OpenSourceCustomAdapter(OpenSourceData.getLicenseData(), CustomViewHolder.class);
+        OpenSourceCustomAdapter adapter = new OpenSourceCustomAdapter(OpenSourceData.getLicenseData(), new CustomViewHolder.Factory());
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);

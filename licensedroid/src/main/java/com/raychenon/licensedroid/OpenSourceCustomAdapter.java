@@ -16,30 +16,17 @@ public  class OpenSourceCustomAdapter extends RecyclerView.Adapter<OpenSourceCus
     private final List<OpenSource> openSources;
     private final OpenSourceTransformer transformer;
     private OpenSourceCustomViewHolder viewHolder;
+    private final OpenSourceCustomViewHolder.Factory factory;
 
-    private final Class<? extends OpenSourceCustomViewHolder> cls;
-
-    public OpenSourceCustomAdapter(final List<OpenSource> openSourceList, final Class<? extends OpenSourceCustomViewHolder> cls){
+    public OpenSourceCustomAdapter(final List<OpenSource> openSourceList, final OpenSourceCustomViewHolder.Factory factory){
         this.openSources = openSourceList;
         this.transformer = new OpenSourceTransformer();
-        this.cls = cls;
+        this.factory = factory;
     }
 
     @Override
     public OpenSourceCustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        OpenSourceCustomViewHolder vh = null;
-        try {
-            Class[] cArg = {ViewGroup.class, int.class};
-            Method instantateMethod = cls.getMethod("instantate", cArg);
-            vh = (OpenSourceCustomViewHolder) instantateMethod.invoke(null, parent, viewType);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        }
-        return vh;
+        return factory.createViewHolder(parent,viewType);
     }
 
     @Override
