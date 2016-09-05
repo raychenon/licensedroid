@@ -1,26 +1,26 @@
-package com.raychenon.licensedroid.sample.adapter;
+package com.raychenon.licensedroid.sample.viewholder;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.raychenon.licensedroid.adapter.OSCustomViewHolder;
+import com.raychenon.licensedroid.adapter.LicenseViewHolder;
 import com.raychenon.licensedroid.OpenSourceUIModel;
 import com.raychenon.licensedroid.sample.R;
 
 /**
  * @author Raymond Chenon
  */
-public class CustomViewHolder extends OSCustomViewHolder {
+public class CustomViewHolder extends LicenseViewHolder {
 
     private TextView tvName;
     private TextView tvAuthor;
     private TextView tvLicense;
 
-    public static class Factory implements OSCustomViewHolder.Factory {
+    public static class Factory implements LicenseViewHolder.Factory {
         @Override
-        public OSCustomViewHolder createViewHolder(ViewGroup parent, int viewType){
+        public LicenseViewHolder createViewHolder(ViewGroup parent, int viewType){
             View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_list_item, parent, false);
             return new CustomViewHolder(v);
         }

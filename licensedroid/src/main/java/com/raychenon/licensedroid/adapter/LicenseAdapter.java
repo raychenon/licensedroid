@@ -12,13 +12,13 @@ import java.util.List;
 /**
  * @author Raymond Chenon
  */
-public  class OSCustomAdapter extends RecyclerView.Adapter<OSCustomViewHolder> {
+public  class LicenseAdapter extends RecyclerView.Adapter<LicenseViewHolder> {
 
     private final List<OpenSource> openSources;
     private final OpenSourceTransformer transformer;
-    private final OSCustomViewHolder.Factory factory;
+    private final LicenseViewHolder.Factory factory;
 
-    public OSCustomAdapter(final List<OpenSource> openSourceList, final OSCustomViewHolder.Factory factory){
+    public LicenseAdapter(final List<OpenSource> openSourceList, final LicenseViewHolder.Factory factory){
         this.openSources = openSourceList;
         this.transformer = new OpenSourceTransformer();
         this.factory = factory;
@@ -29,12 +29,12 @@ public  class OSCustomAdapter extends RecyclerView.Adapter<OSCustomViewHolder> {
     }
 
     @Override
-    public OSCustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public LicenseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return factory.createViewHolder(parent,viewType);
     }
 
     @Override
-    public void onBindViewHolder(OSCustomViewHolder holder, int position) {
+    public void onBindViewHolder(LicenseViewHolder holder, int position) {
         OpenSource openSource = getItem(position);
         OpenSourceUIModel item = transformer.transform(openSource);
 

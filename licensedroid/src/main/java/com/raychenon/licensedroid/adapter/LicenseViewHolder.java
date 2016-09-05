@@ -9,13 +9,13 @@ import com.raychenon.licensedroid.OpenSourceUIModel;
 /**
  * @author Raymond Chenon
  */
-public abstract class OSCustomViewHolder extends RecyclerView.ViewHolder{
+public abstract class LicenseViewHolder extends RecyclerView.ViewHolder{
 
     public interface Factory{
-        public abstract OSCustomViewHolder createViewHolder(ViewGroup parent, int viewType);
+        public abstract LicenseViewHolder createViewHolder(ViewGroup parent, int viewType);
     }
 
-    public OSCustomViewHolder(View itemView){
+    public LicenseViewHolder(View itemView){
         super(itemView);
     }
 
