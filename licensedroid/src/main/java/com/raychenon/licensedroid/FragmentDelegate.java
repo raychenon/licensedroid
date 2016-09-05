@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.raychenon.licensedroid.adapter.OpenSourceAdapter;
+
 import java.util.ArrayList;
 
 /**

@@ -1,15 +1,13 @@
 package com.raychenon.licensedroid.sample;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.raychenon.licensedroid.SimpleDividerItemDecoration;
-import com.raychenon.licensedroid.sample.R;
+import com.raychenon.licensedroid.ui.SimpleDividerItemDecoration;
 
-import com.raychenon.licensedroid.OpenSourceAdapter;
+import com.raychenon.licensedroid.adapter.OpenSourceAdapter;
 
 /**
  * @author Raymond Chenon

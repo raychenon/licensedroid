@@ -1,36 +1,40 @@
-package com.raychenon.licensedroid;
+package com.raychenon.licensedroid.adapter;
 
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.view.ViewGroup;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import com.raychenon.licensedroid.OpenSource;
+import com.raychenon.licensedroid.OpenSourceTransformer;
+import com.raychenon.licensedroid.OpenSourceUIModel;
+
 import java.util.List;
 
 /**
  * @author Raymond Chenon
  */
-public  class OpenSourceCustomAdapter extends RecyclerView.Adapter<OpenSourceCustomViewHolder> {
+public  class OSCustomAdapter extends RecyclerView.Adapter<OSCustomViewHolder> {
 
     private final List<OpenSource> openSources;
     private final OpenSourceTransformer transformer;
-    private OpenSourceCustomViewHolder viewHolder;
-    private final OpenSourceCustomViewHolder.Factory factory;
+    private final OSCustomViewHolder.Factory factory;
 
-    public OpenSourceCustomAdapter(final List<OpenSource> openSourceList, final OpenSourceCustomViewHolder.Factory factory){
+    public OSCustomAdapter(final List<OpenSource> openSourceList, final OSCustomViewHolder.Factory factory){
         this.openSources = openSourceList;
         this.transformer = new OpenSourceTransformer();
         this.factory = factory;
+
+        if (openSources == null || factory == null) {
+            throw new NullPointerException("Neither data or factory can be null!");
+        }
     }
 
     @Override
-    public OpenSourceCustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public OSCustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return factory.createViewHolder(parent,viewType);
     }
 
     @Override
-    public void onBindViewHolder(OpenSourceCustomViewHolder holder, int position) {
+    public void onBindViewHolder(OSCustomViewHolder holder, int position) {
         OpenSource openSource = getItem(position);
         OpenSourceUIModel item = transformer.transform(openSource);
 

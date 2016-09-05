@@ -4,11 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.LinearLayout;
 
-import com.raychenon.licensedroid.OpenSourceAdapter;
-import com.raychenon.licensedroid.OpenSourceCustomAdapter;
-import com.raychenon.licensedroid.SimpleDividerItemDecoration;
+import com.raychenon.licensedroid.adapter.OSCustomAdapter;
+import com.raychenon.licensedroid.ui.SimpleDividerItemDecoration;
 import com.raychenon.licensedroid.sample.adapter.CustomViewHolder;
 
 /**
@@ -30,7 +28,7 @@ public class CustomViewHolderActivity extends AppCompatActivity {
 
     private void initRecyclerView(){
 
-        OpenSourceCustomAdapter adapter = new OpenSourceCustomAdapter(OpenSourceData.getLicenseData(), new CustomViewHolder.Factory());
+        OSCustomAdapter adapter = new OSCustomAdapter(OpenSourceData.getLicenseData(), new CustomViewHolder.Factory());
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
