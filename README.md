@@ -25,6 +25,14 @@ OpenSourceDialogFragment dialog = OpenSourceDialogFragment.newInstance(list);
 dialog.show(getSupportFragmentManager(), "dialog");
 ```
 
+Add a new License
+=================
+You need a License missing in ```LicenseMap```.
+You can create a new License by extending ```LicenseInfos```
+```
+public class MyNewLicense extends LicenseInfos 
+```
+
 Library Project
 ============
 To use License Droid as a library, configure the project level `build.gradle` then add LicenseDroid :
