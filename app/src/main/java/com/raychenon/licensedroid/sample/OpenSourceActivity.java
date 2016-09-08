@@ -5,9 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.raychenon.licensedroid.ui.SimpleDividerItemDecoration;
-
 import com.raychenon.licensedroid.adapter.OpenSourceAdapter;
+import com.raychenon.licensedroid.ui.SimpleDividerItemDecoration;
 
 /**
  * @author Raymond Chenon
