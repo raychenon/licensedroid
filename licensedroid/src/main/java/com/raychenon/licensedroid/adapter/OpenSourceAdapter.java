@@ -15,12 +15,12 @@ import java.util.List;
 /**
  * @author Raymond Chenon
  */
-public class LicenseAdapter extends RecyclerView.Adapter<OpenSourceDefaultViewHolder>{
+public class OpenSourceAdapter extends RecyclerView.Adapter<OpenSourceDefaultViewHolder>{
 
     private List<OpenSource> openSources;
     private OpenSourceTransformer transformer;
 
-    public LicenseAdapter(final List<OpenSource> openSourceList){
+    public OpenSourceAdapter(final List<OpenSource> openSourceList){
         this.openSources = openSourceList;
         transformer = new OpenSourceTransformer();
     }

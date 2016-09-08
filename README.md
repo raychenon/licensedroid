@@ -6,7 +6,7 @@ License Droid
 Avoid boiler plate code to display one page "open source". 
 * Write the list of libraries in a few lines
 * Select the license type with `LicenseMap`
-* display the licences with `OpenSourceDialogFragment` or `LicenseAdapter` 
+* display the licences with `OpenSourceDialogFragment` or `OpenSourceAdapter` 
 
 
 ```java
@@ -25,7 +25,7 @@ OpenSourceDialogFragment dialog = OpenSourceDialogFragment.newInstance(list);
 dialog.show(getSupportFragmentManager(), "dialog");
 
 //  use a turnkey RecyclerView Adapter
-LicenseAdapter adapter = new LicenseAdapter(OpenSourceData.getLicenseData());
+OpenSourceAdapter adapter = new OpenSourceAdapter(list);
 recyclerView.setAdapter(adapter);
 ```
 

@@ -5,22 +5,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.raychenon.licensedroid.adapter.LicenseViewHolder;
+import com.raychenon.licensedroid.adapter.OpenSourceViewHolder;
 import com.raychenon.licensedroid.OpenSourceUIModel;
 import com.raychenon.licensedroid.sample.R;
 
 /**
  * @author Raymond Chenon
  */
-public class CustomViewHolder extends LicenseViewHolder {
+public class CustomViewHolder extends OpenSourceViewHolder {
 
     private TextView tvName;
     private TextView tvAuthor;
     private TextView tvLicense;
 
-    public static class Factory implements LicenseViewHolder.Factory {
+    public static class Factory implements OpenSourceViewHolder.Factory {
         @Override
-        public LicenseViewHolder createViewHolder(ViewGroup parent, int viewType){
+        public OpenSourceViewHolder createViewHolder(ViewGroup parent, int viewType){
             View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_list_item, parent, false);
             return new CustomViewHolder(v);
         }

@@ -12,13 +12,13 @@ import java.util.List;
 /**
  * @author Raymond Chenon
  */
-public  class CLicenseAdapter extends RecyclerView.Adapter<LicenseViewHolder> {
+public  class COpenSourceAdapter extends RecyclerView.Adapter<OpenSourceViewHolder> {
 
     private final List<OpenSource> openSources;
     private final OpenSourceTransformer transformer;
-    private final LicenseViewHolder.Factory factory;
+    private final OpenSourceViewHolder.Factory factory;
 
-    public CLicenseAdapter(final List<OpenSource> openSourceList, final LicenseViewHolder.Factory factory){
+    public COpenSourceAdapter(final List<OpenSource> openSourceList, final OpenSourceViewHolder.Factory factory){
         this.openSources = openSourceList;
         this.transformer = new OpenSourceTransformer();
         this.factory = factory;
@@ -29,12 +29,12 @@ public  class CLicenseAdapter extends RecyclerView.Adapter<LicenseViewHolder> {
     }
 
     @Override
-    public LicenseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public OpenSourceViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return factory.createViewHolder(parent,viewType);
     }
 
     @Override
-    public void onBindViewHolder(LicenseViewHolder holder, int position) {
+    public void onBindViewHolder(OpenSourceViewHolder holder, int position) {
         OpenSource openSource = getItem(position);
         OpenSourceUIModel item = transformer.transform(openSource);
 
