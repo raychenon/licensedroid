@@ -6,7 +6,7 @@ License Droid
 Avoid boiler plate code to display one page "open source". 
 * Write the list of libraries in a few lines
 * Select the license type with `LicenseMap`
-* display the licences with `OpenSourceDialogFragment` or `OpenSourceAdapter` 
+* display the licences with `OpenSourceDialogFragment` or `LicenseAdapter` 
 
 
 ```java
@@ -14,15 +14,19 @@ Avoid boiler plate code to display one page "open source".
 List<OpenSource> list = new ArrayList<>();
 list.add(new OpenSource.Builder("Butterknife", "Jake Wharton", LicenseMap.APACHE2(2013)).build());
 list.add(new OpenSource.Builder("Expandable RecyclerView", "Big Nerd Ranch", LicenseMap.MIT(2015)).build());
-// add a special license
+// add a custom license
 list.add(new OpenSource.Builder("facebook-android-sdk", "Facebook, Inc",  "You are hereby granted a non-exclusive, worldwide, royalty-free license to ...").build());
 
 ....
 
 
-// display
+//  display in a Dialog
 OpenSourceDialogFragment dialog = OpenSourceDialogFragment.newInstance(list);
 dialog.show(getSupportFragmentManager(), "dialog");
+
+//  use a turnkey RecyclerView Adapter
+LicenseAdapter adapter = new LicenseAdapter(OpenSourceData.getLicenseData());
+recyclerView.setAdapter(adapter);
 ```
 
 Add a new License
@@ -30,19 +34,17 @@ Add a new License
 You need a License missing in ```LicenseMap```.
 You can create a new License by extending ```LicenseInfos```
 ```
-public class MyNewLicense extends LicenseInfos 
+public class CustomLicense extends LicenseInfos 
 ```
 
 Library Project
 ============
-To use License Droid as a library, configure the project level `build.gradle` then add LicenseDroid :
+To use License Droid as a library, configure the project level `build.gradle`, add jcenter as repository then add LicenseDroid :
 ```groovy
 buildscript {
   repositories {
     jcenter()
-    // add this repo if jcenter doesn't work
-    // maven { url 'https://dl.bintray.com/raychenon/maven' }
-   }
+  }
 }
 
 dependencies {

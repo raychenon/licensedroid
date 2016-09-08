@@ -1,44 +1,44 @@
 package com.raychenon.licensedroid.adapter;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import com.raychenon.licensedroid.OpenSource;
 import com.raychenon.licensedroid.OpenSourceTransformer;
 import com.raychenon.licensedroid.OpenSourceUIModel;
+import com.raychenon.licensedroid.R;
 
 import java.util.List;
 
 /**
  * @author Raymond Chenon
  */
-public  class LicenseAdapter extends RecyclerView.Adapter<LicenseViewHolder> {
+public class LicenseAdapter extends RecyclerView.Adapter<OpenSourceDefaultViewHolder>{
 
-    private final List<OpenSource> openSources;
-    private final OpenSourceTransformer transformer;
-    private final LicenseViewHolder.Factory factory;
+    private List<OpenSource> openSources;
+    private OpenSourceTransformer transformer;
 
-    public LicenseAdapter(final List<OpenSource> openSourceList, final LicenseViewHolder.Factory factory){
+    public LicenseAdapter(final List<OpenSource> openSourceList){
         this.openSources = openSourceList;
-        this.transformer = new OpenSourceTransformer();
-        this.factory = factory;
-
-        if (openSources == null || factory == null) {
-            throw new NullPointerException("Neither data or factory can be null!");
-        }
+        transformer = new OpenSourceTransformer();
     }
 
     @Override
-    public LicenseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return factory.createViewHolder(parent,viewType);
+    public OpenSourceDefaultViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.license_item,parent,false);
+        return new OpenSourceDefaultViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(LicenseViewHolder holder, int position) {
+    public void onBindViewHolder(OpenSourceDefaultViewHolder holder, int position) {
         OpenSource openSource = getItem(position);
+
         OpenSourceUIModel item = transformer.transform(openSource);
 
-        holder.bindData(item);
+        holder.tvName.setText(item.getLibraryName());
+        holder.tvLicense.setText(item.getLicense());
     }
 
     @Override

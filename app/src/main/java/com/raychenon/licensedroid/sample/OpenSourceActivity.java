@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.raychenon.licensedroid.ui.SimpleDividerItemDecoration;
 
-import com.raychenon.licensedroid.adapter.OpenSourceAdapter;
+import com.raychenon.licensedroid.adapter.LicenseAdapter;
 
 /**
  * @author Raymond Chenon
@@ -28,7 +28,7 @@ public class OpenSourceActivity extends AppCompatActivity {
     }
 
     private void initRecyclerView(){
-        OpenSourceAdapter adapter = new OpenSourceAdapter(OpenSourceData.getLicenseData());
+        LicenseAdapter adapter = new LicenseAdapter(OpenSourceData.getLicenseData());
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
