@@ -37,8 +37,7 @@
         <activity
             android:name=".CustomViewHolderActivity"
             android:label="@string/licensedroid_app_name"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="portrait">
+            android:theme="@style/AppTheme">
         </activity>
 
 
