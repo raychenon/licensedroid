@@ -34,7 +34,7 @@ def siteUrl = 'https://github.com/raychenon/LicenseDroid'      // Homepage URL o
 def gitUrl = 'https://github.com/raychenon/LicenseDroid.git'   // Git repository URL
 def genDescription = 'A library to generate your Open Source licenses page'
 group = 'com.raychenon'
-version = '0.1.0'
+version = '0.2.0'
 
 install {
     repositories.mavenInstaller {
@@ -111,10 +111,10 @@ bintray {
         publish = true
 
         version {
-            name = '0.1.0'
+            name = '0.2.0'
             desc = genDescription
             released  = new Date()
-            vcsTag = '0.1.0'
+            vcsTag = '0.2.0'
         }
     }
     configurations = ['archives']
