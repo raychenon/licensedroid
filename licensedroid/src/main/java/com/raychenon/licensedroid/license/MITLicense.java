@@ -2,11 +2,11 @@ package com.raychenon.licensedroid.license;
 
 /**
  * @author Raymond Chenon
- * https://opensource.org/licenses/MIT
+ *         https://opensource.org/licenses/MIT
  */
 public class MITLicense extends LicenseInfos {
 
-    public MITLicense(final int year){
+    public MITLicense(final int year) {
         this.year = year;
     }
 

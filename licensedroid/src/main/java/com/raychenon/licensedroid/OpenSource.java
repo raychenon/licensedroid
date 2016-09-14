@@ -5,13 +5,23 @@ import android.os.Parcelable;
 
 import com.raychenon.licensedroid.license.LicenseInfos;
 
-import java.io.Serializable;
-
 /**
  * @author Raymond Chenon
  */
 public class OpenSource implements Parcelable {
 
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<OpenSource> CREATOR = new Parcelable.Creator<OpenSource>() {
+        @Override
+        public OpenSource createFromParcel(Parcel in) {
+            return new OpenSource(in);
+        }
+
+        @Override
+        public OpenSource[] newArray(int size) {
+            return new OpenSource[size];
+        }
+    };
     // internal
     public final boolean isLicenseText;
     private final String libraryName;
@@ -21,7 +31,6 @@ public class OpenSource implements Parcelable {
     // optional
     private String libraryVersion;
 
-
     public OpenSource(Builder builder) {
         this.libraryName = builder.libraryName;
         this.author = builder.author;
@@ -30,6 +39,15 @@ public class OpenSource implements Parcelable {
         this.libraryVersion = builder.libraryVersion;
 
         isLicenseText = licenseText != null;
+    }
+
+    protected OpenSource(Parcel in) {
+        isLicenseText = in.readByte() != 0x00;
+        libraryName = in.readString();
+        author = in.readString();
+        licenseText = in.readString();
+        license = (LicenseInfos) in.readValue(LicenseInfos.class.getClassLoader());
+        libraryVersion = in.readString();
     }
 
     public String getProjectName() {
@@ -52,7 +70,22 @@ public class OpenSource implements Parcelable {
         return libraryVersion;
     }
 
-    public static class Builder{
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeByte((byte) (isLicenseText ? 0x01 : 0x00));
+        dest.writeString(libraryName);
+        dest.writeString(author);
+        dest.writeString(licenseText);
+        dest.writeSerializable(license);
+        dest.writeString(libraryVersion);
+    }
+
+    public static class Builder {
         private String libraryName;
         private String author;
         private String licenseText;
@@ -82,42 +115,4 @@ public class OpenSource implements Parcelable {
         }
 
     }
-
-
-    protected OpenSource(Parcel in) {
-        isLicenseText = in.readByte() != 0x00;
-        libraryName = in.readString();
-        author = in.readString();
-        licenseText = in.readString();
-        license = (LicenseInfos) in.readValue(LicenseInfos.class.getClassLoader());
-        libraryVersion = in.readString();
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeByte((byte) (isLicenseText ? 0x01 : 0x00));
-        dest.writeString(libraryName);
-        dest.writeString(author);
-        dest.writeString(licenseText);
-        dest.writeSerializable(license);
-        dest.writeString(libraryVersion);
-    }
-
-    @SuppressWarnings("unused")
-    public static final Parcelable.Creator<OpenSource> CREATOR = new Parcelable.Creator<OpenSource>() {
-        @Override
-        public OpenSource createFromParcel(Parcel in) {
-            return new OpenSource(in);
-        }
-
-        @Override
-        public OpenSource[] newArray(int size) {
-            return new OpenSource[size];
-        }
-    };
 }

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,11 +17,8 @@ import java.util.ArrayList;
 public class OpenSourceDialogFragment extends DialogFragment {
 
     private static final String KEY_ARG_LIST_OPENSOURCE = "opensourceList";
-    private ArrayList<OpenSource> openSourceList;
-
-    private RecyclerView recyclerView;
-
     FragmentDelegate delegate;
+    private ArrayList<OpenSource> openSourceList;
 
     public static OpenSourceDialogFragment newInstance(final ArrayList<OpenSource> openSourceList) {
 
@@ -43,7 +39,7 @@ public class OpenSourceDialogFragment extends DialogFragment {
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (delegate == null){
+        if (delegate == null) {
             delegate = new FragmentDelegate();
         }
 

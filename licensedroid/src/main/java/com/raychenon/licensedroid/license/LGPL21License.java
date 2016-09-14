@@ -6,7 +6,7 @@ package com.raychenon.licensedroid.license;
  */
 public class LGPL21License extends LicenseInfos {
 
-    public LGPL21License(final int year){
+    public LGPL21License(final int year) {
         this.year = year;
     }
 

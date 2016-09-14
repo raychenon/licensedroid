@@ -29,12 +29,6 @@ public class CustomViewHolderActivity extends AppCompatActivity {
     private void initRecyclerView(){
 
         OpenSourceAdapter adapter = new OpenSourceAdapter(OpenSourceData.getLicenseData(), new CustomViewHolder.Factory());
-
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-
-        recyclerView.setLayoutManager(llm);
-        recyclerView.addItemDecoration(new SimpleDividerItemDecoration(this)); // for the line divider
         recyclerView.setAdapter(adapter);
     }
 }

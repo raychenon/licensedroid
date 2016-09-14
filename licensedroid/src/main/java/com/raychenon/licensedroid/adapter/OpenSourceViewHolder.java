@@ -9,16 +9,16 @@ import com.raychenon.licensedroid.OpenSourceUIModel;
 /**
  * @author Raymond Chenon
  */
-public abstract class OpenSourceViewHolder extends RecyclerView.ViewHolder{
+public abstract class OpenSourceViewHolder extends RecyclerView.ViewHolder {
 
-    public interface Factory{
-        public abstract OpenSourceViewHolder createViewHolder(ViewGroup parent, int viewType);
-    }
-
-    public OpenSourceViewHolder(View itemView){
+    public OpenSourceViewHolder(View itemView) {
         super(itemView);
     }
 
     public abstract void bindData(final OpenSourceUIModel item);
+
+    public interface Factory {
+        public abstract OpenSourceViewHolder createViewHolder(ViewGroup parent, int viewType);
+    }
 
 }

@@ -15,11 +15,9 @@ import java.util.ArrayList;
 public class OpenSourceFragment extends Fragment {
 
     private static final String KEY_ARG_LIST_OPENSOURCE = "opensourceList";
-    private ArrayList<OpenSource> openSourceList;
-
-    private RecyclerView recyclerView;
-
     FragmentDelegate delegate;
+    private ArrayList<OpenSource> openSourceList;
+    private RecyclerView recyclerView;
 
     public static OpenSourceFragment newInstance(final ArrayList<OpenSource> openSourceList) {
 
@@ -41,7 +39,7 @@ public class OpenSourceFragment extends Fragment {
         // Set incoming parameters
         Bundle args = getArguments();
 
-        if (delegate == null){
+        if (delegate == null) {
             delegate = new FragmentDelegate();
         }
 

@@ -15,19 +15,19 @@ import java.util.List;
 /**
  * @author Raymond Chenon
  */
-public class ObsoleteOpenSourceAdapter extends RecyclerView.Adapter<OpenSourceDefaultViewHolder>{
+public class ObsoleteOpenSourceAdapter extends RecyclerView.Adapter<OpenSourceDefaultViewHolder> {
 
     private List<OpenSource> openSources;
     private OpenSourceTransformer transformer;
 
-    public ObsoleteOpenSourceAdapter(final List<OpenSource> openSourceList){
+    public ObsoleteOpenSourceAdapter(final List<OpenSource> openSourceList) {
         this.openSources = openSourceList;
         transformer = new OpenSourceTransformer();
     }
 
     @Override
     public OpenSourceDefaultViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.license_item,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.license_item, parent, false);
         return new OpenSourceDefaultViewHolder(v);
     }
 
@@ -46,7 +46,7 @@ public class ObsoleteOpenSourceAdapter extends RecyclerView.Adapter<OpenSourceDe
         return openSources != null ? openSources.size() : 0;
     }
 
-    private OpenSource getItem(final int position){
+    private OpenSource getItem(final int position) {
         return openSources.get(position);
     }
 }

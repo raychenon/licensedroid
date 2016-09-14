@@ -12,13 +12,13 @@ import java.util.List;
 /**
  * @author Raymond Chenon
  */
-public  class OpenSourceAdapter extends RecyclerView.Adapter<OpenSourceViewHolder> {
+public class OpenSourceAdapter extends RecyclerView.Adapter<OpenSourceViewHolder> {
 
     private final List<OpenSource> openSources;
     private final OpenSourceTransformer transformer;
     private OpenSourceViewHolder.Factory factory;
 
-    public OpenSourceAdapter(final List<OpenSource> openSourceList){
+    public OpenSourceAdapter(final List<OpenSource> openSourceList) {
         this.openSources = openSourceList;
         this.transformer = new OpenSourceTransformer();
         if (openSources == null) {
@@ -26,7 +26,7 @@ public  class OpenSourceAdapter extends RecyclerView.Adapter<OpenSourceViewHolde
         }
     }
 
-    public OpenSourceAdapter(final List<OpenSource> openSourceList, final OpenSourceViewHolder.Factory factory){
+    public OpenSourceAdapter(final List<OpenSource> openSourceList, final OpenSourceViewHolder.Factory factory) {
         this.openSources = openSourceList;
         this.transformer = new OpenSourceTransformer();
         this.factory = factory;
@@ -38,10 +38,10 @@ public  class OpenSourceAdapter extends RecyclerView.Adapter<OpenSourceViewHolde
 
     @Override
     public OpenSourceViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if (factory == null){
+        if (factory == null) {
             return OpenSourceDefaultViewHolder.createViewHolder(parent, viewType);
         }
-        return factory.createViewHolder(parent,viewType);
+        return factory.createViewHolder(parent, viewType);
     }
 
     @Override
@@ -57,7 +57,7 @@ public  class OpenSourceAdapter extends RecyclerView.Adapter<OpenSourceViewHolde
         return openSources != null ? openSources.size() : 0;
     }
 
-    private OpenSource getItem(final int position){
+    private OpenSource getItem(final int position) {
         return openSources.get(position);
     }
 }

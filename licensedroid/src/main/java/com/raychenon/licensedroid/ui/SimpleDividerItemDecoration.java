@@ -12,7 +12,7 @@ import com.raychenon.licensedroid.R;
 /**
  * @author Raymond Chenon
  */
-public class SimpleDividerItemDecoration  extends RecyclerView.ItemDecoration {
+public class SimpleDividerItemDecoration extends RecyclerView.ItemDecoration {
     private Drawable mDivider;
 
     public SimpleDividerItemDecoration(Context context) {

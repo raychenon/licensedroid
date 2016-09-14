@@ -2,11 +2,11 @@ package com.raychenon.licensedroid.license;
 
 /**
  * @author Raymond Chenon
- * https://opensource.org/licenses/Apache-2.0
+ *         https://opensource.org/licenses/Apache-2.0
  */
 public class ApacheLicense20 extends LicenseInfos {
 
-    public ApacheLicense20(final int year){
+    public ApacheLicense20(final int year) {
         this.year = year;
     }
 
