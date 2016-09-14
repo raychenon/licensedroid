@@ -41,7 +41,6 @@ The custom View Holder extends from `OpenSourceViewHolder`. It must have a stati
 OpenSourceAdapter adapter = new OpenSourceAdapter(OpenSourceData.getLicenseData(), new MyCustomViewHolder.Factory());
 ...
 public class MyCustomViewHolder extends OpenSourceViewHolder {
-
     public static class Factory implements OpenSourceViewHolder.Factory {
         @Override
         public OpenSourceViewHolder createViewHolder(ViewGroup parent, int viewType){
@@ -60,8 +59,7 @@ public class MyCustomViewHolder extends OpenSourceViewHolder {
         // bind your view holder with data
     }
 }
-
- ```
+```
  
 Add a new License
 =================
