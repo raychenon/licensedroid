@@ -3,7 +3,7 @@ License Droid
 
 ![Alt text](/images/preview_licensedroid.png "Preview")
 ![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)
-**An elegant library to give credit to the open source projects used**
+**An elegant library to credit the open source projects used in a commercial app**
 
 ## Summary
 
