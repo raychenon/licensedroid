@@ -7,8 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.Log;
 
-import com.raychenon.licensedroid.SimpleDividerItemDecoration;
-
 /**
  * @author Raymond Chenon
  */

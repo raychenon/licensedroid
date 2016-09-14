@@ -2,7 +2,7 @@ package com.raychenon.licensedroid.license;
 
 /**
  * @author Raymond Chenon
- * https://opensource.org/licenses/EPL-1.0
+ *         https://opensource.org/licenses/EPL-1.0
  */
 public class EclipsePublicLicense10 extends LicenseInfos {
 

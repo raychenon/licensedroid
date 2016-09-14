@@ -2,9 +2,9 @@ package com.raychenon.licensedroid.license;
 
 /**
  * @author Raymond Chenon
- * https://opensource.org/licenses/MPL-2.0
+ *         https://opensource.org/licenses/MPL-2.0
  */
-public class MozillaPublicLicense20 extends LicenseInfos{
+public class MozillaPublicLicense20 extends LicenseInfos {
 
     @Override
     public String getName() {

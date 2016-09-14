@@ -2,11 +2,11 @@ package com.raychenon.licensedroid.license;
 
 /**
  * @author Raymond Chenon
- * https://opensource.org/licenses/BSD-2-Clause
+ *         https://opensource.org/licenses/BSD-2-Clause
  */
-public class BSD2ClauseLicense extends LicenseInfos{
+public class BSD2ClauseLicense extends LicenseInfos {
 
-    public BSD2ClauseLicense(final int year){
+    public BSD2ClauseLicense(final int year) {
         this.year = year;
     }
 
