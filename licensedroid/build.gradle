@@ -30,8 +30,8 @@ dependencies {
 
 
 
-def siteUrl = 'https://github.com/raychenon/LicenseDroid'      // Homepage URL of the library
-def gitUrl = 'https://github.com/raychenon/LicenseDroid.git'   // Git repository URL
+def siteUrl = 'https://github.com/raychenon/licensedroid'      // Homepage URL of the library
+def gitUrl = 'https://github.com/raychenon/licensedroid.git'   // Git repository URL
 def genDescription = 'A library to generate your Open Source licenses page'
 group = 'com.raychenon'
 version = '0.2.0'
