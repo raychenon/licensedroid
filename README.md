@@ -1,7 +1,7 @@
 License Droid
 ============
 
-[![Build Status - Master](https://travis-ci.org/raychenon/licensedroid.svg?branch=master) (https://travis-ci.org/raychenon/licensedroid)
+![Build Status - Master](https://travis-ci.org/raychenon/licensedroid.svg?branch=master)
 ![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)
 
 **An elegant library to credit the open source projects used in a commercial app**
