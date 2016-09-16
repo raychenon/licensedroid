@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.raychenon.licensedroid.adapter.OpenSourceViewHolder;
-import com.raychenon.licensedroid.OpenSourceUIModel;
+import com.raychenon.licensedroid.OpenSourceModel;
 import com.raychenon.licensedroid.sample.R;
 
 /**
@@ -35,7 +35,7 @@ public class CustomViewHolder extends OpenSourceViewHolder {
     }
 
     @Override
-    public void bindData(OpenSourceUIModel item) {
+    public void bindData(OpenSourceModel item) {
 
         tvName.setText(item.getLibraryName());
         tvAuthor.setText(item.getAuthor());

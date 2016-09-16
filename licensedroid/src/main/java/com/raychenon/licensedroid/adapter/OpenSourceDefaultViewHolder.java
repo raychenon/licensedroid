@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.raychenon.licensedroid.OpenSourceUIModel;
+import com.raychenon.licensedroid.OpenSourceModel;
 import com.raychenon.licensedroid.R;
 
 /**
@@ -29,7 +29,7 @@ public class OpenSourceDefaultViewHolder extends OpenSourceViewHolder {
     }
 
     @Override
-    public void bindData(OpenSourceUIModel item) {
+    public void bindData(OpenSourceModel item) {
         tvName.setText(item.getLibraryName());
         tvLicense.setText(item.getLicense());
     }

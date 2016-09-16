@@ -10,9 +10,9 @@ public class OpenSourceTransformer {
     public OpenSourceTransformer() {
     }
 
-    public OpenSourceUIModel transform(final OpenSource openSource) {
+    public OpenSourceModel transform(final OpenSource openSource) {
 
-        return new OpenSourceUIModel(openSource.getProjectName(), openSource.getAuthor(), extractLicenseText(openSource));
+        return new OpenSourceModel(openSource.getProjectName(), openSource.getAuthor(), extractLicenseText(openSource));
     }
 
     private String extractLicenseText(final OpenSource openSource) {

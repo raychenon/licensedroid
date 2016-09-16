@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.raychenon.licensedroid.OpenSourceUIModel;
+import com.raychenon.licensedroid.OpenSourceModel;
 
 /**
  * @author Raymond Chenon
@@ -15,7 +15,7 @@ public abstract class OpenSourceViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
     }
 
-    public abstract void bindData(final OpenSourceUIModel item);
+    public abstract void bindData(final OpenSourceModel item);
 
     public interface Factory {
         public abstract OpenSourceViewHolder createViewHolder(ViewGroup parent, int viewType);
