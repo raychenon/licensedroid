@@ -29,6 +29,10 @@ public class OpenSourceTransformer {
     }
 
     private String extractName(final OpenSource openSource) {
+        if (openSource.getLicense() == null){
+            // TODO extract the first words
+            return openSource.getLicenseText().substring(0,15) + "...";
+        }
         return openSource.getLicense().getName();
     }
 
