@@ -1,0 +1,57 @@
+package com.raychenon.licensedroid.adapter;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.raychenon.licensedroid.OpenSourceModel;
+import com.raychenon.licensedroid.R;
+
+/**
+ * @author Raymond Chenon
+ */
+public class OpenSourceExpandableViewHolder extends OpenSourceViewHolder {
+
+    private TextView tvName;
+    private TextView tvAuthor;
+    private TextView tvLicense;
+
+    private boolean isExpanded = false;
+
+    public static class Factory implements OpenSourceViewHolder.Factory {
+        @Override
+        public OpenSourceViewHolder createViewHolder(ViewGroup parent, int viewType){
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.license_expendable_item, parent, false);
+            return new OpenSourceExpandableViewHolder(v);
+        }
+    };
+
+    public OpenSourceExpandableViewHolder(final View itemView) {
+        super(itemView);
+
+        tvName = (TextView) itemView.findViewById(R.id.licenseName);
+        tvAuthor = (TextView) itemView.findViewById(R.id.licenseAuthor);
+        tvLicense = (TextView) itemView.findViewById(R.id.licenseType);
+    }
+
+    @Override
+    public void bindData(final OpenSourceModel item) {
+
+        tvName.setText(item.getLibraryName());
+        tvAuthor.setText(item.getAuthor());
+        tvLicense.setText(item.getLicenseName());
+
+        tvLicense.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isExpanded){
+                    tvLicense.setText(item.getLicense());
+                }else{
+                    tvLicense.setText(item.getLicenseName());
+                }
+            }
+        });
+    }
+
+}

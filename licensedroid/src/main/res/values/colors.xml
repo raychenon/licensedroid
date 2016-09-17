@@ -2,5 +2,6 @@
 <resources>
     <color name="divider">#bfbfbf</color>
     <color name="library_name">#0080ff</color>
+    <color name="library_author">#3b00d2</color>
     <color name="black">#000000</color>
 </resources>
