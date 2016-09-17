@@ -42,9 +42,10 @@ public class OpenSourceExpandableViewHolder extends OpenSourceViewHolder {
         tvAuthor.setText(item.getAuthor());
         tvLicense.setText(item.getLicenseName());
 
-        tvLicense.setOnClickListener(new View.OnClickListener() {
+        itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                isExpanded = !isExpanded;
                 if(isExpanded){
                     tvLicense.setText(item.getLicense());
                 }else{
