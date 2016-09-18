@@ -12,7 +12,7 @@ public class OpenSourceTransformer {
 
     public OpenSourceModel transform(final OpenSource openSource) {
 
-        return new OpenSourceModel(openSource.getProjectName(), openSource.getAuthor(), extractLicenseText(openSource),extractName(openSource));
+        return new OpenSourceModel(openSource.getProjectName(), openSource.getAuthor(), extractLicenseText(openSource), extractName(openSource));
     }
 
     private String extractLicenseText(final OpenSource openSource) {
@@ -29,9 +29,10 @@ public class OpenSourceTransformer {
     }
 
     private String extractName(final OpenSource openSource) {
-        if (openSource.getLicense() == null){
-            // TODO extract the first words
-            return openSource.getLicenseText().substring(0,15) + "...";
+        if (openSource.getLicense() == null) {
+            // custom license
+            int endIndex = openSource.getLicenseText().indexOf(" ", 20);
+            return openSource.getLicenseText().substring(0, endIndex) + " ...";
         }
         return openSource.getLicense().getName();
     }
