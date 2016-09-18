@@ -1,4 +1,4 @@
-package com.raychenon.licensedroid.adapter;
+package com.raychenon.licensedroid.adapter.viewholder;
 
 import android.view.LayoutInflater;
 import android.view.View;

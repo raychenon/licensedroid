@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.raychenon.licensedroid.OpenSourceDialogFragment;
-import com.raychenon.licensedroid.OpenSourceFragment;
 
 import java.util.ArrayList;
 
@@ -20,6 +19,7 @@ public class StartActivity extends AppCompatActivity {
     Button dialogBtn;
     Button fragmentBtn;
     Button customViewHolderBtn;
+    Button expandableBtn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class StartActivity extends AppCompatActivity {
         dialogBtn = (Button) findViewById(R.id.dialog_button);
         fragmentBtn = (Button) findViewById(R.id.fragment_button);
         customViewHolderBtn = (Button) findViewById(R.id.custom_viewholder_button);
+        expandableBtn = (Button) findViewById(R.id.expandable_viewholder_button);
 
         activityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,10 +59,17 @@ public class StartActivity extends AppCompatActivity {
                 redirect(CustomViewHolderActivity.class);
             }
         });
+
+        expandableBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                redirect(ExpandableViewHolderActivity.class);
+            }
+        });
     }
 
-    private void redirect(final  Class<?> cls){
-        startActivity(new Intent(this,cls));
+    private void redirect(final Class<?> cls) {
+        startActivity(new Intent(this, cls));
     }
 
     private void showDialog() {
