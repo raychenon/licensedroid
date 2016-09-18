@@ -4,8 +4,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
 import com.raychenon.licensedroid.OpenSource;
-import com.raychenon.licensedroid.OpenSourceTransformer;
 import com.raychenon.licensedroid.OpenSourceModel;
+import com.raychenon.licensedroid.OpenSourceTransformer;
 import com.raychenon.licensedroid.adapter.viewholder.OpenSourceDefaultViewHolder;
 import com.raychenon.licensedroid.adapter.viewholder.OpenSourceViewHolder;
 

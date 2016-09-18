@@ -5,8 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
 import com.raychenon.licensedroid.adapter.OpenSourceAdapter;
-import com.raychenon.licensedroid.adapter.viewholder.OpenSourceExpandableViewHolder;
 import com.raychenon.licensedroid.adapter.viewholder.OpenSourceViewHolder;
+import com.raychenon.licensedroid.sample.viewholder.CustomViewHolder;
 
 /**
  * @author Raymond Chenon
@@ -27,7 +27,7 @@ public class CustomViewHolderActivity extends AppCompatActivity {
 
     private void initRecyclerView() {
 
-        OpenSourceAdapter<OpenSourceViewHolder> adapter = new OpenSourceAdapter<OpenSourceViewHolder>(OpenSourceData.getLicenseData(), new OpenSourceExpandableViewHolder.Factory());
+        OpenSourceAdapter<OpenSourceViewHolder> adapter = new OpenSourceAdapter<OpenSourceViewHolder>(OpenSourceData.getLicenseData(), new CustomViewHolder.Factory());
         recyclerView.setAdapter(adapter);
     }
 }

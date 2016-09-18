@@ -5,32 +5,26 @@ package com.raychenon.licensedroid;
  */
 public class OpenSourceModel {
 
-    private final String author;
-    private final String libraryName;
-    private final String licenseDescription;
-    private final String licenseName;
+    public final String author;
+    public final String libraryName;
+    public final License license;
 
-    public OpenSourceModel(String libraryName, String author, String licenseDescription, final String licenseName) {
+    public OpenSourceModel(final String libraryName, final String author, final License license) {
         this.libraryName = libraryName;
         this.author = author;
-        this.licenseDescription = licenseDescription;
-        this.licenseName = licenseName;
+        this.license = license;
     }
 
-    public String getLicense() {
-        return licenseDescription;
-    }
+    public static class License {
+        public final String name;
+        public final String text;
+        public final String fullDescription;
 
-    public String getLibraryName() {
-        return libraryName;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public String getLicenseName() {
-        return licenseName;
+        public License(String name, String text, String fullDescription) {
+            this.name = name;
+            this.text = text;
+            this.fullDescription = fullDescription;
+        }
     }
 
 }

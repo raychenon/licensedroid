@@ -30,7 +30,7 @@ public class OpenSourceDefaultViewHolder extends OpenSourceViewHolder {
 
     @Override
     public void bindData(OpenSourceModel item) {
-        tvName.setText(item.getLibraryName());
-        tvLicense.setText(item.getLicense());
+        tvName.setText(item.libraryName);
+        tvLicense.setText(item.license.text);
     }
 }

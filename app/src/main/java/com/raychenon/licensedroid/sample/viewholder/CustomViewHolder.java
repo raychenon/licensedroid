@@ -31,9 +31,9 @@ public class CustomViewHolder extends OpenSourceViewHolder {
     @Override
     public void bindData(OpenSourceModel item) {
 
-        tvName.setText(item.getLibraryName());
-        tvAuthor.setText(item.getAuthor());
-        tvLicense.setText(item.getLicense());
+        tvName.setText(item.libraryName);
+        tvAuthor.setText(item.author);
+        tvLicense.setText(item.license.text);
     }
 
     public static class Factory implements OpenSourceViewHolder.Factory {

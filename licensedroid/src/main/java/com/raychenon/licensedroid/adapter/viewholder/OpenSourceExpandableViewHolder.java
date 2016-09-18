@@ -19,14 +19,6 @@ public class OpenSourceExpandableViewHolder extends OpenSourceViewHolder {
 
     private boolean isExpanded = false;
 
-    public static class Factory implements OpenSourceViewHolder.Factory {
-        @Override
-        public OpenSourceViewHolder createViewHolder(ViewGroup parent, int viewType){
-            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.license_expendable_item, parent, false);
-            return new OpenSourceExpandableViewHolder(v);
-        }
-    };
-
     public OpenSourceExpandableViewHolder(final View itemView) {
         super(itemView);
 
@@ -35,24 +27,34 @@ public class OpenSourceExpandableViewHolder extends OpenSourceViewHolder {
         tvLicense = (TextView) itemView.findViewById(R.id.licenseType);
     }
 
+    ;
+
     @Override
     public void bindData(final OpenSourceModel item) {
 
-        tvName.setText(item.getLibraryName());
-        tvAuthor.setText(item.getAuthor());
-        tvLicense.setText(item.getLicenseName());
+        tvName.setText(item.libraryName);
+        tvAuthor.setText(item.author);
+        tvLicense.setText(item.license.name);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 isExpanded = !isExpanded;
-                if(isExpanded){
-                    tvLicense.setText(item.getLicense());
-                }else{
-                    tvLicense.setText(item.getLicenseName());
+                if (isExpanded) {
+                    tvLicense.setText(item.license.text);
+                } else {
+                    tvLicense.setText(item.license.name);
                 }
             }
         });
+    }
+
+    public static class Factory implements OpenSourceViewHolder.Factory {
+        @Override
+        public OpenSourceViewHolder createViewHolder(ViewGroup parent, int viewType) {
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.license_expendable_item, parent, false);
+            return new OpenSourceExpandableViewHolder(v);
+        }
     }
 
 }
