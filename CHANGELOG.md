@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+Version 0.3.0 *(2016-09-xx)*
+----------------------------
+
+OpenSourceExpandableViewHolder introduced
+OpenSourceModel has extra informations in License class
+
 Version 0.2.0 *(2016-09-15)*
 ----------------------------
 
