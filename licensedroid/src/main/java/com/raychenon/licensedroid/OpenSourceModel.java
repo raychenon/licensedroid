@@ -23,7 +23,7 @@ public class OpenSourceModel {
         public License(String name, String text, String fullDescription) {
             this.name = name;
             this.text = text;
-            this.fullDescription = fullDescription;
+            this.fullDescription = fullDescription == null ? text : fullDescription;
         }
     }
 

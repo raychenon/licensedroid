@@ -26,8 +26,6 @@ public class CustomViewHolder extends OpenSourceViewHolder {
         tvLicense = (TextView) itemView.findViewById(R.id.licenseText);
     }
 
-    ;
-
     @Override
     public void bindData(OpenSourceModel item) {
 
