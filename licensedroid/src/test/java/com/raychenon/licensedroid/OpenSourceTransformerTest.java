@@ -43,6 +43,41 @@ public class OpenSourceTransformerTest {
         transform_correct_whatever_license(licenseInfos, model);
     }
 
+    @Test
+    public void transform_correct_when_bsd2() throws Exception {
+        LicenseInfos licenseInfos = LicenseMap.BSD_2(YEAR);
+        OpenSourceModel model = openSourceTransformer.transform(mockOpenSource(licenseInfos));
+        transform_correct_whatever_license(licenseInfos, model);
+    }
+
+    @Test
+    public void transform_correct_when_bsd3() throws Exception {
+        LicenseInfos licenseInfos = LicenseMap.BSD_3(YEAR);
+        OpenSourceModel model = openSourceTransformer.transform(mockOpenSource(licenseInfos));
+        transform_correct_whatever_license(licenseInfos, model);
+    }
+
+    @Test
+    public void transform_correct_when_eclipse() throws Exception {
+        LicenseInfos licenseInfos = LicenseMap.ECLIPSE_10();
+        OpenSourceModel model = openSourceTransformer.transform(mockOpenSource(licenseInfos));
+        transform_correct_whatever_license(licenseInfos, model);
+    }
+
+    @Test
+    public void transform_correct_when_lgpl21() throws Exception {
+        LicenseInfos licenseInfos = LicenseMap.LGPL_21(YEAR);
+        OpenSourceModel model = openSourceTransformer.transform(mockOpenSource(licenseInfos));
+        transform_correct_whatever_license(licenseInfos, model);
+    }
+
+    @Test
+    public void transform_correct_when_lgpl30() throws Exception {
+        LicenseInfos licenseInfos = LicenseMap.LGPL_30();
+        OpenSourceModel model = openSourceTransformer.transform(mockOpenSource(licenseInfos));
+        transform_correct_whatever_license(licenseInfos, model);
+    }
+    
     public void transform_correct_whatever_license(final LicenseInfos licenseInfos, final OpenSourceModel model) throws Exception {
         assertEquals(AUTHOR, model.author);
         assertEquals(NAME, model.libraryName);
