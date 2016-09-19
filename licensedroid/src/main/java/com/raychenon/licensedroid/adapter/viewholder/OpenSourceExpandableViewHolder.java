@@ -27,8 +27,6 @@ public class OpenSourceExpandableViewHolder extends OpenSourceViewHolder {
         tvLicense = (TextView) itemView.findViewById(R.id.licenseType);
     }
 
-    ;
-
     @Override
     public void bindData(final OpenSourceModel item) {
 
@@ -41,7 +39,7 @@ public class OpenSourceExpandableViewHolder extends OpenSourceViewHolder {
             public void onClick(View v) {
                 isExpanded = !isExpanded;
                 if (isExpanded) {
-                    tvLicense.setText(item.license.text);
+                    tvLicense.setText(item.license.fullDescription);
                 } else {
                     tvLicense.setText(item.license.name);
                 }
