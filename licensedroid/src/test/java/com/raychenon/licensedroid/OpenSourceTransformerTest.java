@@ -14,6 +14,7 @@ import static org.junit.Assert.assertNotNull;
  */
 
 public class OpenSourceTransformerTest {
+
     final int YEAR = 2015;
     final String NAME = "name";
     final String AUTHOR = "author";
@@ -30,7 +31,7 @@ public class OpenSourceTransformerTest {
         LicenseInfos licenseInfos = LicenseMap.APACHE2(YEAR);
 
         OpenSourceModel model = openSourceTransformer.transform(mockOpenSource(licenseInfos));
-        transform_correct_whatever_license(licenseInfos,model);
+        transform_correct_whatever_license(licenseInfos, model);
         assertEquals(licenseInfos.getLongerLicenseText(), model.license.fullDescription);
     }
 
@@ -38,13 +39,6 @@ public class OpenSourceTransformerTest {
     public void transform_correct_when_mit() throws Exception {
 
         LicenseInfos licenseInfos = LicenseMap.MIT(YEAR);
-        OpenSourceModel model = openSourceTransformer.transform(mockOpenSource(licenseInfos));
-        transform_correct_whatever_license(licenseInfos,model);
-    }
-
-    @Test
-    public void transform_correct_when_mozilla() throws Exception {
-        LicenseInfos licenseInfos = LicenseMap.MOZILLA_PUBLIC_LICENSE();
         OpenSourceModel model = openSourceTransformer.transform(mockOpenSource(licenseInfos));
         transform_correct_whatever_license(licenseInfos, model);
     }
@@ -54,10 +48,10 @@ public class OpenSourceTransformerTest {
         assertEquals(NAME, model.libraryName);
         assertEquals(licenseInfos.getName(), model.license.name);
 
-        if (licenseInfos.hasLongerLicenseText()){
-            assertNotNull(model.license.fullDescription);
-        }else{
+        if (licenseInfos.hasLongerLicenseText()) {
             assertEquals(licenseInfos.getLongerLicenseText(), model.license.fullDescription);
+        } else {
+            assertNotNull(model.license.text, model.license.fullDescription);
         }
         assertNotNull(model.license.text);
     }
