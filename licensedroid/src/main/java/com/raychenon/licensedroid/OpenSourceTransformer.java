@@ -15,7 +15,7 @@ public class OpenSourceTransformer {
     }
 
     private OpenSourceModel.License constructLicense(final OpenSource openSource) {
-        return new OpenSourceModel.License(extractName(openSource), extractLicenseText(openSource), extractFullDescription(openSource));
+        return new OpenSourceModel.License(extractLicenseName(openSource), extractLicenseText(openSource), extractLicenseFullDescription(openSource));
     }
 
     private String extractLicenseText(final OpenSource openSource) {
@@ -31,7 +31,7 @@ public class OpenSourceTransformer {
         }
     }
 
-    private String extractName(final OpenSource openSource) {
+    private String extractLicenseName(final OpenSource openSource) {
         if (openSource.getLicense() == null) {
             // custom license
             int endIndex = openSource.getLicenseText().indexOf(" ", 20);
@@ -40,7 +40,7 @@ public class OpenSourceTransformer {
         return openSource.getLicense().getName();
     }
 
-    private String extractFullDescription(final OpenSource openSource) {
+    private String extractLicenseFullDescription(final OpenSource openSource) {
         if (openSource.getLicense() != null && openSource.getLicense().hasLongerLicenseText()) {
             return openSource.getLicense().getLongerLicenseText();
         }
