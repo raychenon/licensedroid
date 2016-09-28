@@ -4,8 +4,9 @@ Change Log
 Version 0.3.0 *(2016-09-xx)*
 ----------------------------
 
-OpenSourceExpandableViewHolder introduced
+Introduce OpenSourceExpandableViewHolder 
 OpenSourceModel has extra informations in License class
+If present, the version is appended to the library name.
 
 Version 0.2.0 *(2016-09-15)*
 ----------------------------
