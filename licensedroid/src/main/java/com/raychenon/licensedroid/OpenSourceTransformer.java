@@ -11,11 +11,18 @@ public class OpenSourceTransformer {
     }
 
     public OpenSourceModel transform(final OpenSource openSource) {
-        return new OpenSourceModel(openSource.getProjectName(), openSource.getAuthor(), constructLicense(openSource));
+        return new OpenSourceModel(combineLibName(openSource), openSource.getAuthor(), constructLicense(openSource));
     }
 
     private OpenSourceModel.License constructLicense(final OpenSource openSource) {
         return new OpenSourceModel.License(extractLicenseName(openSource), extractLicenseText(openSource), extractLicenseFullDescription(openSource));
+    }
+
+    private String combineLibName(final OpenSource openSource) {
+        if (openSource.getVersion() != null){
+            return openSource.getProjectName() + " " + openSource.getVersion();
+        }
+        return  openSource.getProjectName();
     }
 
     private String extractLicenseText(final OpenSource openSource) {

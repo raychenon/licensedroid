@@ -22,7 +22,7 @@ public class OpenSourceData {
 
     public static List<OpenSource> getLicenseData() {
         List<OpenSource> list = new LinkedList<>();
-        list.add(new OpenSource.Builder("Butterknife", "Jake Wharton", LicenseMap.APACHE2(2013)).build());
+        list.add(new OpenSource.Builder("Butterknife", "Jake Wharton", LicenseMap.APACHE2(2013)).withVersion("8.4.0").build());
         list.add(new OpenSource.Builder("ViewPagerIndicator", "Jake Wharton", LicenseMap.MIT(2013)).build());
         list.add(new OpenSource.Builder("Retrofit", "Square, Inc", LicenseMap.APACHE2(2013)).build());
         list.add(new OpenSource.Builder("Picasso", "Square, Inc", LicenseMap.APACHE2(2013)).build());
