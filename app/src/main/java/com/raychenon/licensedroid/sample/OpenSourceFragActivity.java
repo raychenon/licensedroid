@@ -25,7 +25,7 @@ public class OpenSourceFragActivity extends AppCompatActivity {
         commitFragment();
     }
 
-    private void commitFragment(){
+    private void commitFragment() {
         OpenSourceFragment fragment = OpenSourceFragment.newInstance(new ArrayList<>(OpenSourceData.getLicenseData()));
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.fragment_container, fragment).commit();

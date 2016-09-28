@@ -3,70 +3,57 @@ package com.raychenon.licensedroid.sample;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
 
 import com.raychenon.licensedroid.OpenSourceDialogFragment;
-import com.raychenon.licensedroid.OpenSourceFragment;
 
 import java.util.ArrayList;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * @author Raymond Chenon
  */
 public class StartActivity extends AppCompatActivity {
 
-    Button activityBtn;
-    Button dialogBtn;
-    Button fragmentBtn;
-    Button customViewHolderBtn;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_activity);
 
-        activityBtn = (Button) findViewById(R.id.activity_button);
-        dialogBtn = (Button) findViewById(R.id.dialog_button);
-        fragmentBtn = (Button) findViewById(R.id.fragment_button);
-        customViewHolderBtn = (Button) findViewById(R.id.custom_viewholder_button);
-
-        activityBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                redirect(OpenSourceActivity.class);
-            }
-        });
-
-        dialogBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDialog();
-            }
-        });
-
-        fragmentBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                redirect(OpenSourceFragActivity.class);
-            }
-        });
-
-        customViewHolderBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                redirect(CustomViewHolderActivity.class);
-            }
-        });
+        ButterKnife.bind(this);
     }
 
-    private void redirect(final  Class<?> cls){
-        startActivity(new Intent(this,cls));
+    @OnClick(R.id.activity_button)
+    public void redirectActivity() {
+        redirect(OpenSourceActivity.class);
     }
 
-    private void showDialog() {
+    @OnClick(R.id.dialog_button)
+    public void showDialog() {
         OpenSourceDialogFragment dialog = OpenSourceDialogFragment.newInstance(new ArrayList<>(OpenSourceData.getLicenseData()));
         dialog.show(getSupportFragmentManager(), "dialog");
     }
+
+    @OnClick(R.id.fragment_button)
+    public void redirectFragment() {
+        redirect(OpenSourceFragActivity.class);
+    }
+
+    @OnClick(R.id.custom_viewholder_button)
+    public void redirectCustom() {
+        redirect(CustomViewHolderActivity.class);
+    }
+
+    @OnClick(R.id.expandable_viewholder_button)
+    public void redirectExpandble() {
+        redirect(ExpandableViewHolderActivity.class);
+    }
+
+
+    private void redirect(final Class<?> cls) {
+        startActivity(new Intent(this, cls));
+    }
+
 
 }

@@ -26,6 +26,10 @@ public abstract class LicenseInfos implements Serializable {
         return null;
     }
 
+    public boolean hasLongerLicenseText() {
+        return getLongerLicenseText() != null;
+    }
+
     public String getCopyrightFormat() {
         return null; //  Copyright [yyyy] [name of copyright owner]
     }
@@ -34,16 +38,17 @@ public abstract class LicenseInfos implements Serializable {
         return getCopyrightFormat() != null;
     }
 
-    public String getNiceCopyright(final Integer year, final String holder) {
+    public String getNiceCopyright(final Integer year, final String copyrightHolder) {
         String copyright = getCopyrightFormat()
                 .replace(YEAR, String.valueOf(year))
-                .replace(COPYRIGHT_HOLDER, holder);
+                .replace(COPYRIGHT_HOLDER, copyrightHolder);
         return copyright;
     }
 
     public boolean hasShortDescription() {
         return getLicenseText() != null;
     }
+
 
     public int getYear() {
         return year;

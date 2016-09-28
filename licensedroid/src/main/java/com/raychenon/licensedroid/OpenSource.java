@@ -106,7 +106,7 @@ public class OpenSource implements Parcelable {
         }
 
         public Builder withVersion(final String libraryVersion) {
-            this.libraryName = libraryVersion;
+            this.libraryVersion = libraryVersion;
             return this;
         }
 

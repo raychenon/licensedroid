@@ -5,13 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
 import com.raychenon.licensedroid.adapter.OpenSourceAdapter;
+import com.raychenon.licensedroid.adapter.viewholder.OpenSourceExpandableViewHolder;
 import com.raychenon.licensedroid.adapter.viewholder.OpenSourceViewHolder;
 
 /**
  * @author Raymond Chenon
  */
-public class OpenSourceActivity extends AppCompatActivity {
 
+public class ExpandableViewHolderActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
 
@@ -26,8 +27,9 @@ public class OpenSourceActivity extends AppCompatActivity {
     }
 
     private void initRecyclerView() {
-        OpenSourceAdapter<OpenSourceViewHolder> adapter = new OpenSourceAdapter<OpenSourceViewHolder>(OpenSourceData.getLicenseData());
+
+        OpenSourceAdapter<OpenSourceViewHolder> adapter = new OpenSourceAdapter<OpenSourceViewHolder>(OpenSourceData.getLicenseData(), new OpenSourceExpandableViewHolder.Factory());
         recyclerView.setAdapter(adapter);
     }
-
 }
+

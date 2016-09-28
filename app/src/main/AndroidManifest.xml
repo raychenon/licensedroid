@@ -21,7 +21,6 @@
             </intent-filter>
         </activity>
 
-
         <activity
             android:name=".OpenSourceActivity"
             android:label="@string/licensedroid_app_name"
@@ -40,6 +39,11 @@
             android:theme="@style/AppTheme">
         </activity>
 
+        <activity
+            android:name=".ExpandableViewHolderActivity"
+            android:label="@string/licensedroid_app_name"
+            android:theme="@style/AppTheme">
+        </activity>
 
     </application>
 

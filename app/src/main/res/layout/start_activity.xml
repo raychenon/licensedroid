@@ -32,4 +32,11 @@
         style="@style/StartButtonSyle"
         android:text="@string/licensedroid_custom_viewholder"/>
 
+    <Button
+        android:id="@+id/expandable_viewholder_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/StartButtonSyle"
+        android:text="@string/licensedroid_expandable_viewholder"/>
+
 </LinearLayout>

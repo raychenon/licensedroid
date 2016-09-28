@@ -10,9 +10,19 @@ public class OpenSourceTransformer {
     public OpenSourceTransformer() {
     }
 
-    public OpenSourceUIModel transform(final OpenSource openSource) {
+    public OpenSourceModel transform(final OpenSource openSource) {
+        return new OpenSourceModel(combineLibName(openSource), openSource.getAuthor(), constructLicense(openSource));
+    }
 
-        return new OpenSourceUIModel(openSource.getProjectName(), openSource.getAuthor(), extractLicenseText(openSource));
+    private OpenSourceModel.License constructLicense(final OpenSource openSource) {
+        return new OpenSourceModel.License(extractLicenseName(openSource), extractLicenseText(openSource), extractLicenseFullDescription(openSource));
+    }
+
+    private String combineLibName(final OpenSource openSource) {
+        if (openSource.getVersion() != null){
+            return openSource.getProjectName() + " " + openSource.getVersion();
+        }
+        return  openSource.getProjectName();
     }
 
     private String extractLicenseText(final OpenSource openSource) {
@@ -26,6 +36,22 @@ public class OpenSourceTransformer {
                 return sourceLicense.getLicenseText();
             }
         }
+    }
+
+    private String extractLicenseName(final OpenSource openSource) {
+        if (openSource.getLicense() == null) {
+            // custom license
+            int endIndex = openSource.getLicenseText().indexOf(" ", 20);
+            return openSource.getLicenseText().substring(0, endIndex) + " ...";
+        }
+        return openSource.getLicense().getName();
+    }
+
+    private String extractLicenseFullDescription(final OpenSource openSource) {
+        if (openSource.getLicense() != null && openSource.getLicense().hasLongerLicenseText()) {
+            return openSource.getLicense().getLongerLicenseText();
+        }
+        return openSource.getLicenseText();
     }
 
 }

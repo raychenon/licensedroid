@@ -2,11 +2,10 @@ package com.raychenon.licensedroid.sample;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.raychenon.licensedroid.adapter.OpenSourceAdapter;
-import com.raychenon.licensedroid.ui.SimpleDividerItemDecoration;
+import com.raychenon.licensedroid.adapter.viewholder.OpenSourceViewHolder;
 import com.raychenon.licensedroid.sample.viewholder.CustomViewHolder;
 
 /**
@@ -26,9 +25,9 @@ public class CustomViewHolderActivity extends AppCompatActivity {
         initRecyclerView();
     }
 
-    private void initRecyclerView(){
+    private void initRecyclerView() {
 
-        OpenSourceAdapter adapter = new OpenSourceAdapter(OpenSourceData.getLicenseData(), new CustomViewHolder.Factory());
+        OpenSourceAdapter<OpenSourceViewHolder> adapter = new OpenSourceAdapter<OpenSourceViewHolder>(OpenSourceData.getLicenseData(), new CustomViewHolder.Factory());
         recyclerView.setAdapter(adapter);
     }
 }

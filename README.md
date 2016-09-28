@@ -1,9 +1,12 @@
 License Droid
 ============
 
-![Alt text](/images/preview_licensedroid.png "Preview")
-![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)
+![Build Status - Master](https://travis-ci.org/raychenon/licensedroid.svg?branch=master)
+[![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)](https://raw.githubusercontent.com/raychenon/licensedroid/master/LICENSE.txt)
+
 **An elegant library to credit the open source projects used in a commercial app**
+
+![Alt text](/images/preview_licensedroid.png "Preview")
 
 ## Summary
 
@@ -15,7 +18,7 @@ Avoid boiler plate code to display one page "open source".
 
 First let's construct the data. Select the license type with `LicenseMap`
 ```java
-// constuct the data
+// construct the data
 List<OpenSource> list = new ArrayList<>();
 list.add(new OpenSource.Builder("Butterknife", "Jake Wharton", LicenseMap.APACHE2(2013)).build());
 list.add(new OpenSource.Builder("Expandable RecyclerView", "Big Nerd Ranch", LicenseMap.MIT(2015)).build());

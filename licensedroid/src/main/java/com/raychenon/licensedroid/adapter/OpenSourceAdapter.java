@@ -4,15 +4,17 @@ import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
 import com.raychenon.licensedroid.OpenSource;
+import com.raychenon.licensedroid.OpenSourceModel;
 import com.raychenon.licensedroid.OpenSourceTransformer;
-import com.raychenon.licensedroid.OpenSourceUIModel;
+import com.raychenon.licensedroid.adapter.viewholder.OpenSourceDefaultViewHolder;
+import com.raychenon.licensedroid.adapter.viewholder.OpenSourceViewHolder;
 
 import java.util.List;
 
 /**
  * @author Raymond Chenon
  */
-public class OpenSourceAdapter extends RecyclerView.Adapter<OpenSourceViewHolder> {
+public class OpenSourceAdapter<O extends OpenSourceViewHolder> extends RecyclerView.Adapter<OpenSourceViewHolder> {
 
     private final List<OpenSource> openSources;
     private final OpenSourceTransformer transformer;
@@ -47,7 +49,7 @@ public class OpenSourceAdapter extends RecyclerView.Adapter<OpenSourceViewHolder
     @Override
     public void onBindViewHolder(OpenSourceViewHolder holder, int position) {
         OpenSource openSource = getItem(position);
-        OpenSourceUIModel item = transformer.transform(openSource);
+        OpenSourceModel item = transformer.transform(openSource);
 
         holder.bindData(item);
     }

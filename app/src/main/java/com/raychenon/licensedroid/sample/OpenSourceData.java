@@ -20,19 +20,18 @@ public class OpenSourceData {
         }
     };
 
-    public static List<OpenSource> getLicenseData(){
+    public static List<OpenSource> getLicenseData() {
         List<OpenSource> list = new LinkedList<>();
-        list.add(new OpenSource.Builder("Butterknife", "Jake Wharton", LicenseMap.APACHE2(2013)).build());
+        list.add(new OpenSource.Builder("Butterknife", "Jake Wharton", LicenseMap.APACHE2(2013)).withVersion("8.4.0").build());
         list.add(new OpenSource.Builder("ViewPagerIndicator", "Jake Wharton", LicenseMap.MIT(2013)).build());
-        list.add(new OpenSource.Builder("Retrofit", "Square, Inc",  LicenseMap.APACHE2(2013)).build());
-        list.add(new OpenSource.Builder("Picasso", "Square, Inc",  LicenseMap.APACHE2(2013)).build());
-        list.add(new OpenSource.Builder("Moshi", "Square, Inc",  LicenseMap.APACHE2(2015)).build());
-        list.add(new OpenSource.Builder("Flow", "Square, Inc",  LicenseMap.APACHE2(2013)).build());
+        list.add(new OpenSource.Builder("Retrofit", "Square, Inc", LicenseMap.APACHE2(2013)).build());
+        list.add(new OpenSource.Builder("Picasso", "Square, Inc", LicenseMap.APACHE2(2013)).build());
+        list.add(new OpenSource.Builder("Flow", "Square, Inc", LicenseMap.APACHE2(2013)).build());
         list.add(new OpenSource.Builder("Advanced RecyclerView", "Haruki Hasegawa", LicenseMap.APACHE2(2015)).build());
         list.add(new OpenSource.Builder("Expandable RecyclerView", "Big Nerd Ranch", LicenseMap.MIT(2015)).build());
         list.add(new OpenSource.Builder("LicenseDroid", "Raymond Chenon", LicenseMap.APACHE2(2016)).build());
 
-        list.add(new OpenSource.Builder("facebook-android-sdk", "Facebook, Inc",  "You are hereby granted a non-exclusive, worldwide, royalty-free license to use,\n" +
+        list.add(new OpenSource.Builder("facebook-android-sdk", "Facebook, Inc", "You are hereby granted a non-exclusive, worldwide, royalty-free license to use,\n" +
                 "copy, modify, and distribute this software in source code or binary form for use\n" +
                 "in connection with the web services and APIs provided by Facebook.\n" +
                 "\n" +
@@ -48,7 +47,7 @@ public class OpenSourceData {
                 "IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\n" +
                 "CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.").build());
 
-        Collections.sort(list,comparator);
+        Collections.sort(list, comparator);
 
         return list;
     }

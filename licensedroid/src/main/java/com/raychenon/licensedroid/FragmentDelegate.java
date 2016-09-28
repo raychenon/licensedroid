@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.raychenon.licensedroid.adapter.OpenSourceAdapter;
+import com.raychenon.licensedroid.adapter.viewholder.OpenSourceViewHolder;
 
 import java.util.ArrayList;
 
@@ -34,7 +35,7 @@ class FragmentDelegate {
 
     public void bindDataToRecyclerView(final ArrayList<OpenSource> openSourceList) {
         RecyclerView recyclerView = getRecyclerView();
-        OpenSourceAdapter adapter = new OpenSourceAdapter(openSourceList);
+        OpenSourceAdapter<OpenSourceViewHolder> adapter = new OpenSourceAdapter<OpenSourceViewHolder>(openSourceList);
         recyclerView.setAdapter(adapter);
     }
 
