@@ -1,11 +1,14 @@
 package com.raychenon.licensedroid;
 
+import android.support.annotation.VisibleForTesting;
+
 import com.raychenon.licensedroid.license.LicenseInfos;
 
 /**
  * @author Raymond Chenon
  */
-public class OpenSourceTransformer {
+@VisibleForTesting
+class OpenSourceTransformer {
 
     public OpenSourceTransformer() {
     }

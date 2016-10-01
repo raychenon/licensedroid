@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.raychenon.licensedroid.OpenSourceModel;
-import com.raychenon.licensedroid.adapter.viewholder.OpenSourceViewHolder;
+import com.raychenon.licensedroid.viewholder.OpenSourceViewHolder;
 import com.raychenon.licensedroid.sample.R;
 
 /**

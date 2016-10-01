@@ -1,4 +1,4 @@
-package com.raychenon.licensedroid.adapter.viewholder;
+package com.raychenon.licensedroid.viewholder;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
