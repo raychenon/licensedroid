@@ -1,7 +1,7 @@
 Change Log
 ==========
 
-Version 0.3.0 *(2016-09-xx)*
+Version 0.3.0 *(2016-10-01)*
 ----------------------------
 
 Introduce OpenSourceExpandableViewHolder 

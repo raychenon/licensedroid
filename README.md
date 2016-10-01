@@ -83,7 +83,7 @@ buildscript {
 }
 
 dependencies {
-    compile 'com.raychenon:licensedroid:0.1.0'
+    compile 'com.raychenon:licensedroid:0.3.0'
 }
 ```
 
