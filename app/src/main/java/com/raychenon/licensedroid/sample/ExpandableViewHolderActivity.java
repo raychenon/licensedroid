@@ -4,9 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
-import com.raychenon.licensedroid.adapter.OpenSourceAdapter;
-import com.raychenon.licensedroid.adapter.viewholder.OpenSourceExpandableViewHolder;
-import com.raychenon.licensedroid.adapter.viewholder.OpenSourceViewHolder;
+import com.raychenon.licensedroid.OpenSourceAdapter;
+import com.raychenon.licensedroid.viewholder.OpenSourceExpandableViewHolder;
+import com.raychenon.licensedroid.viewholder.OpenSourceViewHolder;
 
 /**
  * @author Raymond Chenon

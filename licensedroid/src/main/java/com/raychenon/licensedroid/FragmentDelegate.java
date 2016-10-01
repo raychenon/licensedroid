@@ -6,8 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.raychenon.licensedroid.adapter.OpenSourceAdapter;
-import com.raychenon.licensedroid.adapter.viewholder.OpenSourceViewHolder;
+import com.raychenon.licensedroid.viewholder.OpenSourceViewHolder;
 
 import java.util.ArrayList;
 

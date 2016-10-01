@@ -1,0 +1,4 @@
+<resources>
+    <public name="licensedroid_library" type="string"/>
+    <public name="licensedroid_dialog_title" type="string"/>
+</resources>
