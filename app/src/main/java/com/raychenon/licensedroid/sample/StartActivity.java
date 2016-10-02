@@ -50,10 +50,8 @@ public class StartActivity extends AppCompatActivity {
         redirect(ExpandableViewHolderActivity.class);
     }
 
-
     private void redirect(final Class<?> cls) {
         startActivity(new Intent(this, cls));
     }
-
 
 }

@@ -3,6 +3,9 @@ package com.raychenon.licensedroid.viewholder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.widget.TextView;
 
 import com.raychenon.licensedroid.OpenSourceModel;
@@ -43,8 +46,16 @@ public class OpenSourceExpandableViewHolder extends OpenSourceViewHolder {
                 } else {
                     tvLicense.setText(item.license.name);
                 }
+                fadeIn(tvLicense);
             }
         });
+    }
+
+    private void fadeIn(final TextView textView){
+        final Animation in = new AlphaAnimation(0.0f, 1.0f);
+        in.setDuration(150);
+        textView.setAnimation(in);
+        in.start();
     }
 
     public static class Factory implements OpenSourceViewHolder.Factory {
