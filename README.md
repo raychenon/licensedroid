@@ -1,8 +1,9 @@
 License Droid
 ============
 
-![Build Status - Master](https://travis-ci.org/raychenon/licensedroid.svg?branch=master)
 [![Apache 2](https://img.shields.io/badge/license-Apache2-blue.svg?style=flat)](https://raw.githubusercontent.com/raychenon/licensedroid/master/LICENSE.txt)
+![Build Status - Master](https://travis-ci.org/raychenon/licensedroid.svg?branch=master)
+[![Download](https://api.bintray.com/packages/raychenon/maven/com.raychenon%3Alicensedroid/images/download.svg) ](https://bintray.com/raychenon/maven/com.raychenon%3Alicensedroid/_latestVersion)
 
 **An elegant library to credit the open source projects used in a commercial app**
 
@@ -83,7 +84,7 @@ buildscript {
 }
 
 dependencies {
-    compile 'com.raychenon:licensedroid:0.1.0'
+    compile 'com.raychenon:licensedroid:0.3.0'
 }
 ```
 
