@@ -1,10 +1,14 @@
 Change Log
 ==========
 
-Version 0.3.1 *(2016-10-xx)*
+Version 0.3.2 *(2016-10-xx)*
 ----------------------------
 
 
+Version 0.3.1 *(2016-10-08)*
+----------------------------
+
+Fix the conflicting "android:label" on failed manifest merge.
 
 Version 0.3.0 *(2016-10-01)*
 ----------------------------
