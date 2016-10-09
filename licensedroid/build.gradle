@@ -101,8 +101,9 @@ bintray {
     user = properties.getProperty('bintray.user')
     key = properties.getProperty('bintray.apikey')
 
-//    user = System.getenv('USER')
-//    key = System.getenv('APIKEY')
+    //    user = System.getenv('USER')
+    //    key = System.getenv('APIKEY')
+
 
     configurations = ['archives']
     pkg {
