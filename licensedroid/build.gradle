@@ -34,7 +34,7 @@ def siteUrl = 'https://github.com/raychenon/licensedroid'      // Homepage URL o
 def gitUrl = 'https://github.com/raychenon/licensedroid.git'   // Git repository URL
 def genDescription = 'A library to generate your Open Source licenses page'
 group = 'com.raychenon'
-version = '0.3.1'
+version = project.property('libVersion')
 
 install {
     repositories.mavenInstaller {
@@ -48,7 +48,6 @@ install {
                 version version
                 url siteUrl
 
-                // Set your license
                 licenses {
                     license {
                         name 'The Apache Software License, Version 2.0'
@@ -94,12 +93,9 @@ artifacts {
     archives sourcesJar
 }
 
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
-
 bintray {
-    user = properties.getProperty('bintray.user')
-    key = properties.getProperty('bintray.apikey')
+    user = System.getenv('USER')
+    key = System.getenv('APIKEY')
 
     configurations = ['archives']
     pkg {
@@ -111,10 +107,10 @@ bintray {
         publish = true
 
         version {
-            name = '0.3.1'
+            name = project.property('bintrayVersion')
             desc = genDescription
             released  = new Date()
-            vcsTag = '0.3.1'
+            vcsTag = project.property('bintrayVcsTag')
         }
     }
     configurations = ['archives']
