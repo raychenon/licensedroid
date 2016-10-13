@@ -20,6 +20,8 @@ import com.raychenon.licensedroid.R;
 public class OpenSourceExpandableViewHolder extends OpenSourceViewHolder {
 
     private final int DURATION = 250;
+    private final int ROTATION = 180;
+    private final int TRANSLATION_Y = 80;
 
     private TextView tvName;
     private TextView tvAuthor;
@@ -76,16 +78,17 @@ public class OpenSourceExpandableViewHolder extends OpenSourceViewHolder {
     }
 
     private void collapse(){
-        animate(-180);
+        animate(-ROTATION,-TRANSLATION_Y);
     }
 
     private void expand(){
-        animate(180);
+        animate(ROTATION,TRANSLATION_Y);
     }
 
-    private void animate(int endRotation){
+    private void animate(int endRotation, int translationY){
 
         arrow.animate().rotationBy(endRotation).setDuration(DURATION).start();
+        tvLicense.animate().translationYBy(translationY).setDuration(DURATION).start();
 
     }
 
