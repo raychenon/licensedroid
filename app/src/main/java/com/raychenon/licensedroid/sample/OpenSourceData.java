@@ -23,10 +23,10 @@ public class OpenSourceData {
     public static List<OpenSource> getLicenseData() {
         List<OpenSource> list = new LinkedList<>();
         list.add(new OpenSource.Builder("Butterknife", "Jake Wharton", LicenseMap.APACHE2(2013)).withVersion("8.4.0").build());
-        list.add(new OpenSource.Builder("ViewPagerIndicator", "Jake Wharton", LicenseMap.MIT(2013)).build());
+        list.add(new OpenSource.Builder("RxJava", "Netflix, Inc", LicenseMap.APACHE2(2013)).build());
+        list.add(new OpenSource.Builder("RxAndroid", "The RxAndroid authors", LicenseMap.APACHE2(2015)).build());
         list.add(new OpenSource.Builder("Retrofit", "Square, Inc", LicenseMap.APACHE2(2013)).build());
         list.add(new OpenSource.Builder("Picasso", "Square, Inc", LicenseMap.APACHE2(2013)).build());
-        list.add(new OpenSource.Builder("Flow", "Square, Inc", LicenseMap.APACHE2(2013)).build());
         list.add(new OpenSource.Builder("Advanced RecyclerView", "Haruki Hasegawa", LicenseMap.APACHE2(2015)).build());
         list.add(new OpenSource.Builder("Expandable RecyclerView", "Big Nerd Ranch", LicenseMap.MIT(2015)).build());
         list.add(new OpenSource.Builder("LicenseDroid", "Raymond Chenon", LicenseMap.APACHE2(2016)).build());
