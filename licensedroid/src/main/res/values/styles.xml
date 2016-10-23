@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="LicenseDroidDialog" parent="@style/Theme.AppCompat.Light.Dialog">
+    <style name="LicenseDroidDialog" >
         <item name="android:windowNoTitle">false</item>
     </style>
 

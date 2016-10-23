@@ -9,7 +9,7 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 23
-        vectorDrawables.useSupportLibrary=true
+        vectorDrawables.useSupportLibrary = true
         versionCode project.versionCode
         versionName project.versionName
     }
@@ -26,7 +26,6 @@ dependencies {
     testCompile 'junit:junit:' + rootProject.junit
 
     compile "com.android.support:recyclerview-v7:${rootProject.supportLibsVersion}"
-    compile 'com.android.support:design:' + rootProject.supportLibsVersion
 }
 
 
