@@ -19,7 +19,7 @@ import com.raychenon.licensedroid.R;
  */
 public class OpenSourceExpandableViewHolder extends OpenSourceViewHolder {
 
-    private final int DURATION = 250;
+    private final int DURATION = 150;
     private final int ROTATION = 180;
     private final int TRANSLATION_Y = 80;
 
