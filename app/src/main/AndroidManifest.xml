@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_licensedroid"
         tools:replace="label"
         android:label="@string/licensedroid_app_name"
         android:supportsRtl="true"

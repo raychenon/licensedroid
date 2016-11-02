@@ -98,6 +98,11 @@ To fix it, make these changes.
 <application
     tools:replace="icon,label" <!--add this line-->
 ```
+## Credits
+
+The arrow up icon was designed by Denis Mikhutin
+https://www.iconfinder.com/icons/1031534
+
 
 License
 -------
