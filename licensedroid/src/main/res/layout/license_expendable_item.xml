@@ -40,10 +40,10 @@
         android:layout_height="wrap_content"
         android:rotation="180"
         android:layout_gravity="right"
-        android:layout_below="@+id/licenseAuthor"
         android:src="@mipmap/ic_chevron_up"
+        android:layout_alignTop="@+id/licenseType"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
-        <!--app:srcCompat="@drawable/ic_arrow"-->
+    <!--app:srcCompat="@drawable/ic_arrow"-->
 
 </RelativeLayout>
