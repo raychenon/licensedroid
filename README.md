@@ -102,7 +102,8 @@ To fix it, make these changes.
 ```
 ## Credits
 
-The arrow up icon was designed by Denis Mikhutin
+* The License Droid logo was designed by [Nadya Kuzmina](http://nadyakuzmina.com/).  
+* The arrow up icon was designed by Denis Mikhutin
 https://www.iconfinder.com/icons/1031534
 
 
