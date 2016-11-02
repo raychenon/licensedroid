@@ -90,16 +90,6 @@ dependencies {
 }
 ```
 
-Note: you may encounter ['tools:replace' issue][1] in the `AndroidManifest.xml` .
-To fix it, make these changes.
-
-```xml
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"  <!--add this line-->
-    
-<application
-    tools:replace="icon,label" <!--add this line-->
-```
 ## Credits
 
 * The License Droid logo was designed by [Nadya Kuzmina](http://nadyakuzmina.com/).  
@@ -125,4 +115,3 @@ License
     limitations under the License.
     
     
- [1]: http://stackoverflow.com/questions/25981156/tools-replace-not-replacing-in-android-manifest 
