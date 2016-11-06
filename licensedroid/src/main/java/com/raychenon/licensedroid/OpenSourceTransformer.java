@@ -14,7 +14,7 @@ class OpenSourceTransformer {
     }
 
     public OpenSourceModel transform(final OpenSource openSource) {
-        return new OpenSourceModel(combineLibName(openSource), openSource.getAuthor(), constructLicense(openSource));
+        return new OpenSourceModel(combineLibName(openSource), openSource.getAuthor(), constructLicense(openSource),convertExtra(openSource));
     }
 
     private OpenSourceModel.License constructLicense(final OpenSource openSource) {
@@ -55,6 +55,10 @@ class OpenSourceTransformer {
             return openSource.getLicense().getLongerLicenseText();
         }
         return openSource.getLicenseText();
+    }
+
+    private OpenSourceModel.Extras convertExtra(final OpenSource openSource){
+        return new OpenSourceModel.Extras(openSource.getVersion(),openSource.getGitRepoUrl());
     }
 
 }
