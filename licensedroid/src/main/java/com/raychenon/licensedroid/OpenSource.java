@@ -30,6 +30,7 @@ public class OpenSource implements Parcelable {
     private LicenseInfos license;
     // optional
     private String libraryVersion;
+    private String gitRepoUrl;
 
     public OpenSource(Builder builder) {
         this.libraryName = builder.libraryName;
@@ -37,6 +38,7 @@ public class OpenSource implements Parcelable {
         this.license = builder.license;
         this.licenseText = builder.licenseText;
         this.libraryVersion = builder.libraryVersion;
+        this.gitRepoUrl = builder.gitRepoUrl;
 
         isLicenseText = licenseText != null;
     }
@@ -48,6 +50,7 @@ public class OpenSource implements Parcelable {
         licenseText = in.readString();
         license = (LicenseInfos) in.readValue(LicenseInfos.class.getClassLoader());
         libraryVersion = in.readString();
+        gitRepoUrl = in.readString();
     }
 
     public String getProjectName() {
@@ -70,6 +73,10 @@ public class OpenSource implements Parcelable {
         return libraryVersion;
     }
 
+    public String getGitRepoUrl(){
+        return gitRepoUrl;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -83,6 +90,7 @@ public class OpenSource implements Parcelable {
         dest.writeString(licenseText);
         dest.writeSerializable(license);
         dest.writeString(libraryVersion);
+        dest.writeString(gitRepoUrl);
     }
 
     public static class Builder {
@@ -92,6 +100,7 @@ public class OpenSource implements Parcelable {
         private LicenseInfos license;
         // optional
         private String libraryVersion;
+        private String gitRepoUrl;
 
         public Builder(final String libraryName, final String author, final String licenseText) {
             this.libraryName = libraryName;
@@ -107,6 +116,11 @@ public class OpenSource implements Parcelable {
 
         public Builder withVersion(final String libraryVersion) {
             this.libraryVersion = libraryVersion;
+            return this;
+        }
+
+        public Builder withGitRepoUrl(final String gitRepoUrl){
+            this.gitRepoUrl = gitRepoUrl;
             return this;
         }
 
