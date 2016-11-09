@@ -90,7 +90,7 @@ dependencies {
 }
 ```
 
-## Credits
+## Acknowledgements
 
 * The License Droid logo was designed by [Nadya Kuzmina](http://nadyakuzmina.com/).  
 * The arrow up icon was designed by Denis Mikhutin
