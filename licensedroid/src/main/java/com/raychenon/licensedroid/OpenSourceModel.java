@@ -8,13 +8,13 @@ public class OpenSourceModel {
     public final String author;
     public final String libraryName;
     public final License license;
-    public final Extras extraInfos;
+    public final Extras extras;
 
-    public OpenSourceModel(final String libraryName, final String author, final License license, final Extras extraInfos) {
+    public OpenSourceModel(final String libraryName, final String author, final License license, final Extras extras) {
         this.libraryName = libraryName;
         this.author = author;
         this.license = license;
-        this.extraInfos = extraInfos;
+        this.extras = extras;
     }
 
     public static class License {

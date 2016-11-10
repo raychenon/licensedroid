@@ -1,13 +1,10 @@
 package com.raychenon.licensedroid.viewholder;
 
-import android.animation.Animator;
-import android.animation.ValueAnimator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -43,6 +40,8 @@ public class OpenSourceExpandableViewHolder extends OpenSourceViewHolder {
     public void bindData(final OpenSourceModel item) {
 
         tvName.setText(item.libraryName);
+        // TODO set clickable url
+        // Html.fromHtml(item.extras.gitRepoUrl);
         tvAuthor.setText(item.author);
         tvLicense.setText(item.license.name);
 
