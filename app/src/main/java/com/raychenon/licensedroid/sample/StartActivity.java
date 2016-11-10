@@ -8,6 +8,7 @@ import com.raychenon.licensedroid.OpenSource;
 import com.raychenon.licensedroid.OpenSourceDialogFragment;
 import com.raychenon.licensedroid.OpenSourceLibrariesActivity;
 import com.raychenon.licensedroid.sample.viewholder.CustomViewHolder;
+import com.raychenon.licensedroid.viewholder.OpenSourceExpandableViewHolder;
 
 import java.util.ArrayList;
 
@@ -49,7 +50,7 @@ public class StartActivity extends AppCompatActivity {
 
     @OnClick(R.id.custom_viewholder_button)
     public void redirectCustom() {
-        startActivity(OpenSourceLibrariesActivity.createIntent(this, librariesList,new CustomViewHolder.Factory()));
+        startActivity(OpenSourceLibrariesActivity.createIntent(this, librariesList,new OpenSourceExpandableViewHolder.Factory()));
         // redirect(CustomViewHolderActivity.class);
     }
 
