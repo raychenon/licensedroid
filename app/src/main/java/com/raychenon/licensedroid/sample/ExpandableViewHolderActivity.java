@@ -28,7 +28,7 @@ public class ExpandableViewHolderActivity extends AppCompatActivity {
 
     private void initRecyclerView() {
 
-        OpenSourceAdapter<OpenSourceViewHolder> adapter = new OpenSourceAdapter<OpenSourceViewHolder>(OpenSourceData.getLicenseData(), new OpenSourceExpandableViewHolder.Factory());
+        OpenSourceAdapter<OpenSourceViewHolder> adapter = new OpenSourceAdapter<OpenSourceViewHolder>(OpenSourceData.getLibrariesData(), new OpenSourceExpandableViewHolder.Factory());
         recyclerView.setAdapter(adapter);
     }
 }

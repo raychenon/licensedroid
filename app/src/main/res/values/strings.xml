@@ -1,8 +1,8 @@
 <resources>
     <string name="licensedroid_app_name">LicenseDroid</string>
-    <string name="licensedroid_activity">Activity</string>
-    <string name="licensedroid_fragment">With OpenSourceFragment</string>
+    <string name="licensedroid_activity">Default Activity</string>
+    <string name="licensedroid_custom_viewholder">Activity with Custom ViewHolder</string>
+    <string name="licensedroid_expandable_viewholder">Activity with Expandable ViewHolder</string>
+    <string name="licensedroid_fragment">OpenSourceFragment</string>
     <string name="licensedroid_dialog">Dialog</string>
-    <string name="licensedroid_custom_viewholder">Custom ViewHolder</string>
-    <string name="licensedroid_expandable_viewholder">Expandable ViewHolder</string>
 </resources>

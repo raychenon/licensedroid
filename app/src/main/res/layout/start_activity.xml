@@ -12,20 +12,6 @@
         android:text="@string/licensedroid_activity"/>
 
     <Button
-        android:id="@+id/fragment_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/StartButtonSyle"
-        android:text="@string/licensedroid_fragment"/>
-
-    <Button
-        android:id="@+id/dialog_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/StartButtonSyle"
-        android:text="@string/licensedroid_dialog"/>
-
-    <Button
         android:id="@+id/custom_viewholder_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,5 +24,19 @@
         android:layout_height="wrap_content"
         style="@style/StartButtonSyle"
         android:text="@string/licensedroid_expandable_viewholder"/>
+
+    <Button
+        android:id="@+id/fragment_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/StartButtonSyle"
+        android:text="@string/licensedroid_fragment"/>
+
+    <Button
+        android:id="@+id/dialog_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/StartButtonSyle"
+        android:text="@string/licensedroid_dialog"/>
 
 </LinearLayout>

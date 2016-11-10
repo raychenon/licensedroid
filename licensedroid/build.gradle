@@ -26,6 +26,7 @@ dependencies {
     testCompile 'junit:junit:' + rootProject.junit
 
     compile "com.android.support:recyclerview-v7:${rootProject.supportLibsVersion}"
+    compile 'com.android.support:design:' + rootProject.supportLibsVersion
 }
 
 

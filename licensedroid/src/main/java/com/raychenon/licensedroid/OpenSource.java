@@ -48,7 +48,7 @@ public class OpenSource implements Parcelable {
         libraryName = in.readString();
         author = in.readString();
         licenseText = in.readString();
-        license = (LicenseInfos) in.readValue(LicenseInfos.class.getClassLoader());
+        license = (LicenseInfos) in.readSerializable();
         libraryVersion = in.readString();
         gitRepoUrl = in.readString();
     }

@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.raychenon.licensedroid.OpenSource;
 import com.raychenon.licensedroid.OpenSourceDialogFragment;
+import com.raychenon.licensedroid.OpenSourceLibrariesActivity;
+import com.raychenon.licensedroid.sample.viewholder.CustomViewHolder;
 
 import java.util.ArrayList;
 
@@ -16,22 +19,26 @@ import butterknife.OnClick;
  */
 public class StartActivity extends AppCompatActivity {
 
+    private ArrayList<OpenSource> librariesList;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_activity);
 
         ButterKnife.bind(this);
+
+        librariesList=new ArrayList<>(OpenSourceData.getLibrariesData());
     }
 
     @OnClick(R.id.activity_button)
     public void redirectActivity() {
-        redirect(OpenSourceActivity.class);
+        startActivity(OpenSourceLibrariesActivity.createIntent(this, librariesList));
     }
 
     @OnClick(R.id.dialog_button)
     public void showDialog() {
-        OpenSourceDialogFragment dialog = OpenSourceDialogFragment.newInstance(new ArrayList<>(OpenSourceData.getLicenseData()));
+        OpenSourceDialogFragment dialog = OpenSourceDialogFragment.newInstance(librariesList);
         dialog.show(getSupportFragmentManager(), "dialog");
     }
 
@@ -42,7 +49,8 @@ public class StartActivity extends AppCompatActivity {
 
     @OnClick(R.id.custom_viewholder_button)
     public void redirectCustom() {
-        redirect(CustomViewHolderActivity.class);
+        startActivity(OpenSourceLibrariesActivity.createIntent(this, librariesList,new CustomViewHolder.Factory()));
+        // redirect(CustomViewHolderActivity.class);
     }
 
     @OnClick(R.id.expandable_viewholder_button)
