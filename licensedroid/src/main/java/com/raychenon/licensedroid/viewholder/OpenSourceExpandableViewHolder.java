@@ -1,5 +1,7 @@
 package com.raychenon.licensedroid.viewholder;
 
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 
 import com.raychenon.licensedroid.OpenSourceModel;
 import com.raychenon.licensedroid.R;
+import com.raychenon.licensedroid.util.TextUtil;
 
 /**
  * @author Raymond Chenon
@@ -39,7 +42,14 @@ public class OpenSourceExpandableViewHolder extends OpenSourceViewHolder {
     @Override
     public void bindData(final OpenSourceModel item) {
 
-        tvName.setText(item.libraryName);
+        if (TextUtil.hasHyperlink(item.extras.gitRepoUrl)) {
+            tvName.setClickable(true);
+            tvName.setMovementMethod(LinkMovementMethod.getInstance());
+            tvName.setText(Html.fromHtml(TextUtil.formatWithLink(item.libraryName, item.extras.gitRepoUrl)));
+        } else {
+            tvName.setClickable(false);
+            tvName.setText(item.libraryName);
+        }
         // TODO set clickable url
         // Html.fromHtml(item.extras.gitRepoUrl);
         tvAuthor.setText(item.author);
@@ -61,11 +71,26 @@ public class OpenSourceExpandableViewHolder extends OpenSourceViewHolder {
         });
     }
 
-    private void fadeIn(final TextView textView){
+    private void fadeIn(final TextView textView) {
         final Animation in = new AlphaAnimation(0.0f, 1.0f);
         in.setDuration(DURATION);
         textView.setAnimation(in);
         in.start();
+    }
+
+    private void collapse() {
+        animate(-ROTATION, -TRANSLATION_Y);
+    }
+
+    private void expand() {
+        animate(ROTATION, TRANSLATION_Y);
+    }
+
+    private void animate(int endRotation, int translationY) {
+
+        arrow.animate().rotationBy(endRotation).setDuration(DURATION).start();
+        tvLicense.animate().translationYBy(translationY).setDuration(DURATION).start();
+
     }
 
     public static class Factory implements OpenSourceViewHolder.Factory {
@@ -74,21 +99,6 @@ public class OpenSourceExpandableViewHolder extends OpenSourceViewHolder {
             View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.license_expendable_item, parent, false);
             return new OpenSourceExpandableViewHolder(v);
         }
-    }
-
-    private void collapse(){
-        animate(-ROTATION,-TRANSLATION_Y);
-    }
-
-    private void expand(){
-        animate(ROTATION,TRANSLATION_Y);
-    }
-
-    private void animate(int endRotation, int translationY){
-
-        arrow.animate().rotationBy(endRotation).setDuration(DURATION).start();
-        tvLicense.animate().translationYBy(translationY).setDuration(DURATION).start();
-
     }
 
 }
