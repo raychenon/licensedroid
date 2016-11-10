@@ -4,5 +4,5 @@
     <string name="licensedroid_custom_viewholder">Activity with Custom ViewHolder</string>
     <string name="licensedroid_expandable_viewholder">Activity with Expandable ViewHolder</string>
     <string name="licensedroid_fragment">OpenSourceFragment</string>
-    <string name="licensedroid_dialog">Dialog</string>
+    <string name="licensedroid_dialog">Default Dialog</string>
 </resources>
