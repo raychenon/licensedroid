@@ -50,8 +50,6 @@ public class OpenSourceExpandableViewHolder extends OpenSourceViewHolder {
             tvName.setClickable(false);
             tvName.setText(item.libraryName);
         }
-        // TODO set clickable url
-        // Html.fromHtml(item.extras.gitRepoUrl);
         tvAuthor.setText(item.author);
         tvLicense.setText(item.license.name);
 
