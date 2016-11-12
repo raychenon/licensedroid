@@ -7,7 +7,10 @@ import android.view.ViewGroup;
 import com.raychenon.licensedroid.OpenSourceModel;
 
 /**
- * @author Raymond Chenon
+ *
+ * The solution was given by "lionscribe"
+ * http://stackoverflow.com/questions/39238674/recyclerview-viewholder-oncreateviewholder-view-binding-and-onbindviewholder
+ * @author lionscribe, Raymond Chenon
  */
 public abstract class OpenSourceViewHolder extends RecyclerView.ViewHolder {
 
