@@ -1,9 +1,11 @@
 Change Log
 ==========
 
-Version 0.3.2 *(2016-10-xx)*
+Version 0.3.2 *(2016-11-12)*
 ----------------------------
-
+Add OpenSourceExpandableViewHolder.
+OpenSourceLibrariesActivity is the default Activity to display the libraries. 
+Display is customizable by passing a "OpenSourceViewHolder".
 
 Version 0.3.1 *(2016-10-08)*
 ----------------------------
